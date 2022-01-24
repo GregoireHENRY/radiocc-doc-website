@@ -7,6 +7,9 @@ on:
 jobs:
   check_comment:
     runs-on: ubuntu-latest
+    env:
+      USER: github.event.issue.user.login
+      COMMENT: github.event.comment.body
     steps:
     - name: Detect not magic comment
       if: |
@@ -14,7 +17,7 @@ jobs:
         && github.event.issue.user.login == 'GregoireHENRY'
         && github.event.comment.body == 'Plz do dat build')
       run: |
-        echo "The user ${github.event.issue.user.login} commented ${github.event.comment.body}"
+        echo "The user ${USER} commented ${COMMENT}"
         && echo "CI exits now on purpose."
         && exit 0
     - name: First issue commented by the boss with magic word
