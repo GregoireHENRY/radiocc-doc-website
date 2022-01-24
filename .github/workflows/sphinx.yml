@@ -17,7 +17,7 @@ jobs:
           sphinx
           pydata-sphinx-theme
           sphinx-autoapi
-    - uses: ammaraskar/sphinx-action@0.4
+    - uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "radiocc/doc/"
     - uses: actions/upload-artifact@v1
