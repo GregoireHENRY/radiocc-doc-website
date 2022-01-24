@@ -8,9 +8,9 @@ jobs:
   check_comment:
     name: First issue commented by the boss with magic word
     if: |
-      ${{ github.event.issue.number == "1"
-      && github.event.issue.user.login == "GregoireHENRY"
-      && github.event.comment.body == "Plz do dat build" }}$
+      github.event.issue.number == '1'
+      && github.event.issue.user.login == 'GregoireHENRY'
+      && github.event.comment.body == 'Plz do dat build'
     runs-on: ubuntu-latest
     steps:
     - name: Friendly accept 
