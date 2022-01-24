@@ -7,7 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Git Sumbodule Update
       with:
         submodules: recursive
     - uses: ammaraskar/sphinx-action@master
