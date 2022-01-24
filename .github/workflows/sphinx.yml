@@ -1,23 +1,20 @@
 name: Sphinx build
 
-on: push
+on:
+  workflow_run:
+    workflows: ["Update module"]
+    types:
+      - completed
 
 jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      with:
-        submodules: recursive
     - uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "radiocc/doc/"
-    - uses: actions/upload-artifact@v1
+    - uses: actions/upload-artifact@v2
       with:
         name: html-docs
         path: radiocc/doc/build/html/
-    - uses: peaceiris/actions-gh-pages@v3
-      if: github.ref == 'refs/heads/main'
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: radiocc/doc/build/html
