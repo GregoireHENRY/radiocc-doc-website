@@ -29,7 +29,7 @@ jobs:
   update_submodule:
     needs: check_comment
     runs-on: ubuntu-latest
-    if: CHECKED == true
+    if: ${{ env.CHECKED }} == true
     steps:
     - name: First issue commented by the boss with magic word
       run: |
