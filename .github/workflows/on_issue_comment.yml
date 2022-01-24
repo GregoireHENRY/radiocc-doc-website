@@ -6,15 +6,12 @@ on:
 
 jobs:
   check_comment:
+    name: First issue commented by the boss with magic word
+    if: |
+      github.event.issue.number == "1"
+      && github.event.issue.user.login == "GregoireHENRY"
+      && github.event.comment.body == "Plz do dat build"
     runs-on: ubuntu-latest
     steps:
-    - run: |
-        echo "issue number : ${NUMBER}"
-        echo "user login : ${USER_LOGIN}"
-        echo "user id : ${USER_ID}"
-        echo "comment : ${COMMENT}"
-      env:
-        NUMBER: ${{ github.event.issue.number }}
-        USER_LOGIN: ${{ github.event.issue.user.login }}
-        USER_ID: ${{ github.event.issue.user.id }}
-        COMMENT: ${{ github.event.comment.body }}
+    - name: Friendly accept 
+      run: echo "Yo if ya ask it dat wey i'll do it huh"
