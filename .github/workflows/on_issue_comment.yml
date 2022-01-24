@@ -32,7 +32,7 @@ jobs:
     if: ${{needs.check_comment.env.CHECKED}} == true
     steps:
     - name: TEST
-      run: echo "CHECKED: ${{needs.check_comment.env.CHECKED}}"
+      run: echo "CHECKED: ${needs.check_comment.env.CHECKED}"
     - name: First issue commented by the boss with magic word
       run: |
         echo "Yo if ya ask it dat wey i'll do it huh"
