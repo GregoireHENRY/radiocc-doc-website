@@ -14,8 +14,7 @@ jobs:
         && github.event.issue.user.login == 'GregoireHENRY'
         && github.event.comment.body == 'Plz do dat build')
       run: |
-        echo "The user ${github.event.issue.user.login} commented
-          ${github.event.comment.body}"
+        echo "The user ${github.event.issue.user.login} commented ${github.event.comment.body}"
         && echo "CI exits now on purpose."
         && exit 0
     - name: First issue commented by the boss with magic word
