@@ -1,0 +1,3 @@
+[submodule "radiocc"]
+	path = radiocc
+	url = https://gitlab-as.oma.be/radiocc/radiocc.git
