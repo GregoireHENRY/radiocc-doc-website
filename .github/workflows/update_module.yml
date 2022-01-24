@@ -7,12 +7,13 @@ on:
       - completed
 
 jobs:
-  docs:
+  update:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      repository: radiocc
-      token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
+      with:
+        repository: radiocc
+        token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
     - name: Pull & update submodules recursively
       run: |
         git submodule update --init --recursive
