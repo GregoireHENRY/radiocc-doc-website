@@ -1,7 +1,8 @@
 name: On issue comment
 
-on: issue_comment
-  types: created
+on: 
+  issue_comment:
+    types: created
 
 jobs:
   check_comment:
