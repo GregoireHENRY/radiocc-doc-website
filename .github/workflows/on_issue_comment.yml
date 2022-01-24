@@ -7,7 +7,6 @@ on:
 jobs:
   check_comment:
     runs-on: ubuntu-latest
-    uses: GregoireHENRY/radiocc-doc-website/.github/workflows/update_module.yml@main
     steps:
     - name: Detect not magic comment
       if: |
@@ -22,3 +21,15 @@ jobs:
     - name: First issue commented by the boss with magic word
       run: |
         echo "Yo if ya ask it dat wey i'll do it huh"
+    - uses: actions/checkout@v2
+    - name: Pull & update submodules recursively
+      run: |
+        git submodule update --init --recursive
+        git submodule update --recursive --remote
+    - name: Commit
+      run: |
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add .
+        git commit -m "auto: update submodules" || echo "No changes to commit"
+        git push
