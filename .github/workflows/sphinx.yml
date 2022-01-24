@@ -1,10 +1,10 @@
 name: Sphinx build
 
-on:
-  workflow_run:
-    workflows: ["Update module"]
-    types:
-      - completed
+#on:
+# workflow_run:
+#    workflows: ["Update module"]
+#    types:
+#      - completed
 
 jobs:
   docs:

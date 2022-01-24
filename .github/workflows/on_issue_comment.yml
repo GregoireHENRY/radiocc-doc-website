@@ -6,12 +6,20 @@ on:
 
 jobs:
   check_comment:
-    name: First issue commented by the boss with magic word
-    if: |
-      github.event.issue.number == '1'
-      && github.event.issue.user.login == 'GregoireHENRY'
-      && github.event.comment.body == 'Plz do dat build'
     runs-on: ubuntu-latest
     steps:
-    - name: Friendly accept 
-      run: echo "Yo if ya ask it dat wey i'll do it huh"
+    - name: Detect not magic comment
+      if: |
+        !(github.event.issue.number == '1'
+        && github.event.issue.user.login == 'GregoireHENRY'
+        && github.event.comment.body == 'Plz do dat build')
+      run: |
+        echo "The user ${github.event.issue.user.login} commented
+          ${github.event.comment.body}"
+        && echo "CI exits now on purpose."
+        && exit 0
+    - name: First issue commented by the boss with magic word
+      run: |
+        echo "Yo if ya ask it dat wey i'll do it huh"
+    - name: Call update module
+      uses: GregoireHENRY/radiocc-doc-website/.github/workflows/update_module.yml@main
