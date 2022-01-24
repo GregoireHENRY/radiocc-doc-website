@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       CHECKED: ${{ needs.check_comment.env.CHECKED }}
-    if: ${{ env.CHECKED }} == true
+    if: ${{ CHECKED }} == true
     steps:
     - name: TEST
       run: echo $CHECKED
