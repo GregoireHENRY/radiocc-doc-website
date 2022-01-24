@@ -14,7 +14,7 @@ jobs:
     - name: Default env
       env:
         CHECKED: true
-      run: #
+      run: echo "start"
     - name: Detect not magic comment
       if: |
         !(github.event.issue.number == '1'
