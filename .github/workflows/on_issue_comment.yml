@@ -7,6 +7,7 @@ on:
 jobs:
   check_comment:
     runs-on: ubuntu-latest
+    uses: GregoireHENRY/radiocc-doc-website/.github/workflows/update_module.yml@main
     steps:
     - name: Detect not magic comment
       if: |
@@ -21,5 +22,3 @@ jobs:
     - name: First issue commented by the boss with magic word
       run: |
         echo "Yo if ya ask it dat wey i'll do it huh"
-    - name: Call update module
-      uses: GregoireHENRY/radiocc-doc-website/.github/workflows/update_module.yml@main
