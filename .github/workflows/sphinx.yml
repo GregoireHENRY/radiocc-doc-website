@@ -10,6 +10,8 @@ jobs:
     - name: Git Sumbodule Update
       run: |
           git submodule update --init --recursive
+          git submodule foreach --recursive git fetch
+          git submodule foreach git pull --ff-only origin main
     - uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "radiocc/doc/"
