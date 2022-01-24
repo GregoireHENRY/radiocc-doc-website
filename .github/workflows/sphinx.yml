@@ -3,7 +3,7 @@ name: Sphinx build
 on: push
 
 jobs:
-  build:
+  docs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -16,15 +16,14 @@ jobs:
         packages: |
           pydata-sphinx-theme
           sphinx-autoapi
-    - name: Build HTML
-      uses: ammaraskar/sphinx-action@0.4
-    - name: Upload artifacts
-      uses: actions/upload-artifact@v1
+    - uses: ammaraskar/sphinx-action@0.4
+      with:
+        docs-folder: "radiocc/doc/"
+    - uses: actions/upload-artifact@v1
       with:
         name: html-docs
         path: radiocc/doc/build/html/
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
+    - uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
