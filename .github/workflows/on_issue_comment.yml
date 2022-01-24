@@ -9,17 +9,26 @@ jobs:
     runs-on: ubuntu-latest
     env:
       USER: ${{ github.event.issue.user.login }}
-      COMMENT: $ {{ github.event.comment.body }}
+      COMMENT: ${{ github.event.comment.body }}
     steps:
+    - name: Default env
+      env:
+        CHECKED: true
     - name: Detect not magic comment
       if: |
         !(github.event.issue.number == '1'
         && github.event.issue.user.login == 'GregoireHENRY'
         && github.event.comment.body == 'Plz do dat build')
+      env:
+        CHECKED: false
       run: |
         echo "The user ${USER} commented ${COMMENT}"
-        echo "CI exits now on purpose."
-        exit 0
+        echo "The workflow will end now."
+  
+  update_submodule:
+    needs: check_comment
+    if: CHECKED == true
+    steps:
     - name: First issue commented by the boss with magic word
       run: |
         echo "Yo if ya ask it dat wey i'll do it huh"
