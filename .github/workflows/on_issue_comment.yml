@@ -34,7 +34,7 @@ jobs:
     if: ${{ env.CHECKED }} == true
     steps:
     - name: TEST
-      run: echo "lol"
+      run: echo "CHECKED: $CHECKED"
     - name: First issue commented by the boss with magic word
       run: |
         echo "Yo if ya ask it dat wey i'll do it huh"
