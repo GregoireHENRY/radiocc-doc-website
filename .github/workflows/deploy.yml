@@ -8,8 +8,9 @@ jobs:
 
     steps:
     - name: Initialise repo
+      uses: actions/checkout@v2
       with:
-        submodules: recursive uses: actions/checkout@v2
+        submodules: recursive 
 
     - name: Build documentation
       uses: ammaraskar/sphinx-action@master
