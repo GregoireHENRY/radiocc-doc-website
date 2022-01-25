@@ -31,12 +31,12 @@ jobs:
     runs-on: ubuntu-latest
     # if: needs.check_comment.env.CHECKED == true
     env:
-      CHECKED: needs.check_comment.env.CHECKED
+      CHECKED: ${{ needs.check_comment.env.CHECKED }}
     steps:
     - name: TEST
       run: |
         echo $CHECKED
-        echo needs.check_comment.env.CHECKED
+        echo ${{ needs.check_comment.env.CHECKED }}
         exit 1
     - name: First issue commented by the boss with magic word
       run: |
