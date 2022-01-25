@@ -7,21 +7,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Initialize repo
+      uses: actions/checkout@v2
 
-    - name: Init new repo in dist folder and commit generated files
+    - name: Build documentation
+      uses: ammaraskar/sphinx-action@master
+      with:
+        docs-folder: "radiocc/doc"
+    - name: Postprocess build
+      run: ./postprocess-build.sh 
+    - name: Isolate build folder to be in separate branch
       run: |
-        cd build
+        # cd build
+        cd radiocc/doc/build
         git init
         git add -A
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git commit -m 'deploy'
 
-    - name: Force push to destination branch
+    - name: Push it
       uses: ad-m/github-push-action@v0.5.0
       with:
         github_token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
-        branch: gh-pages
+        branch: build
         force: true
-        directory: ./build
+        # directory: ./build
+        directory: ./radiocc/doc/build
