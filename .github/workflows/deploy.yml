@@ -24,4 +24,4 @@ jobs:
         github_token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
         branch: gh-pages
         force: true
-        directory: .build
+        directory: ./build
