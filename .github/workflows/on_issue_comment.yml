@@ -23,9 +23,8 @@ jobs:
   update_module:
     needs: check_comment
     runs-on: ubuntu-latest
+    if: needs.check_comment.outputs.check
     steps:
-      - run: echo "${{ needs.check_comment.outputs.check }}"
-      - run: exit 1
       - uses: actions/checkout@v2
       - name: Pull & update submodules recursively
         run: |
