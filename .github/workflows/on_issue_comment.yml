@@ -29,7 +29,6 @@ jobs:
   update_submodule:
     needs: check_comment
     runs-on: ubuntu-latest
-    run:
     # if: needs.check_comment.env.CHECKED == true
     env:
       CHECKED: needs.check_comment.env.CHECKED
