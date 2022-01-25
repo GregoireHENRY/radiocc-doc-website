@@ -1,0 +1,26 @@
+:py:mod:`radiocc.old.R6_Framework_Conversion`
+=============================================
+
+.. py:module:: radiocc.old.R6_Framework_Conversion
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   radiocc.old.R6_Framework_Conversion.Occ_Plane_Conversion
+   radiocc.old.R6_Framework_Conversion.Occ_Plane_Conversion_2
+
+
+
+.. py:function:: Occ_Plane_Conversion(N_data, pos_MEX, vel_MEX, pos_GS, vel_GS)
+
+
+.. py:function:: Occ_Plane_Conversion_2(N_data, pos_MEX, vel_MEX, pos_GS, vel_GS)
+
+

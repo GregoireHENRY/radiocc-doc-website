@@ -1,0 +1,29 @@
+:py:mod:`radiocc.old.R17_Run_Routines1`
+=======================================
+
+.. py:module:: radiocc.old.R17_Run_Routines1
+
+.. autoapi-nested-parse::
+
+   Created on Tue Sep  1 12:14:39 2020
+
+   @author: ananya
+
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   radiocc.old.R17_Run_Routines1.run
+
+
+
+.. py:function:: run(Doppler, Doppler_debias, distance, Diff_doppler, item, i_integral, i_Surface, R_Planet, e, eps0, me, PLOT_DIR, Threshold_neut_upp, CC, kB, N_data, r_MEX_up, z_MEX_up, z_GS_up, vr_MEX_up, vz_MEX_up, vr_GS_up, vz_GS_up, gamma_up, beta_e_up, delta_s_up, r_MEX_dn, z_MEX_dn, z_GS_dn, vr_MEX_dn, vz_MEX_dn, vr_GS_dn, vz_GS_dn, gamma_dn, beta_e_dn, delta_s_dn, Bande, fsup, c, G, m_bar, M_Mars, T_BC_low, T_BC_med, T_BC_upp)
+
+

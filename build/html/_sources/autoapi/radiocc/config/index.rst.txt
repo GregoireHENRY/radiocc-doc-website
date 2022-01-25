@@ -1,0 +1,201 @@
+:py:mod:`radiocc.config`
+========================
+
+.. py:module:: radiocc.config
+
+.. autoapi-nested-parse::
+
+   Configurate parameters.
+
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   radiocc.config.Cfg
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   radiocc.config.generate_config
+
+
+
+.. py:class:: Cfg
+
+   Structure representation of the configurable parameters.
+
+   .. py:attribute:: __DEFAULT_TO_PROCESS
+      
+
+      
+
+   .. py:attribute:: __DEFAULT_RESULTS
+      
+
+      
+
+   .. py:attribute:: __DEFAULT_MISSION
+      
+
+      
+
+   .. py:attribute:: __DEFAULT_DATEFMT
+      :annotation: = YYYY-MMM-DD HH:mm:ss
+
+      
+
+   .. py:attribute:: __DEFAULT_DATE
+      
+
+      
+
+   .. py:attribute:: __DEFAULT_INTERACTIVE_DOWNLOAD
+      :annotation: = True
+
+      
+
+   .. py:attribute:: __DEFAULT_KERNEL_VERSION
+      
+
+      
+
+   .. py:attribute:: __DEFAULT_RADIO_DATA_TYPE
+      
+
+      
+
+   .. py:attribute:: __DEFAULT_GRAPHICAL_INTERFACE
+      :annotation: = False
+
+      
+
+   .. py:attribute:: __to_process
+      
+
+      
+
+   .. py:attribute:: __results
+      
+
+      
+
+   .. py:attribute:: __mission
+      
+
+      
+
+   .. py:attribute:: __datefmt
+      
+
+      
+
+   .. py:attribute:: __date
+      
+
+      
+
+   .. py:attribute:: __interactive_download
+      
+
+      
+
+   .. py:attribute:: __kernel_version
+      
+
+      
+
+   .. py:attribute:: __radio_data_type
+      
+
+      
+
+   .. py:attribute:: __graphical_interface
+      
+
+      
+
+   .. py:method:: load_config_file(self) -> None
+
+      Load the config file.
+
+
+   .. py:method:: __parse_config_file(self, CFG_FILE: dotmap.DotMap) -> None
+
+      Apply variables from the config to the actual config.
+
+
+   .. py:method:: to_dict(self, DEFAULT_ARE_NONE: bool = False) -> Dict[str, Optional[Any]]
+
+      Convert config to hashmap.
+
+
+   .. py:method:: to_process(self) -> pathlib.Path
+      :property:
+
+      Get to_process folder path.
+
+
+   .. py:method:: results(self) -> pathlib.Path
+      :property:
+
+      Get results folder path.
+
+
+   .. py:method:: mission(self) -> radiocc.model.ProcessType
+      :property:
+
+      Get mission type.
+
+
+   .. py:method:: datefmt(self) -> str
+      :property:
+
+      Get date format.
+
+
+   .. py:method:: date(self) -> arrow.Arrow
+      :property:
+
+      Get date folder path.
+
+
+   .. py:method:: interactive_download(self) -> bool
+      :property:
+
+      Get whether the download of the data should be done interactively.
+
+
+   .. py:method:: kernel_version(self) -> radiocc.model.KernelVersion
+      :property:
+
+      Get kernel_version mode.
+
+
+   .. py:method:: radio_data_type(self) -> radiocc.model.RadioDataType
+      :property:
+
+      Get radio data type.
+
+
+   .. py:method:: graphical_interface(self) -> bool
+      :property:
+
+      Get whether the graphical interface is used.
+
+
+
+.. py:function:: generate_config(FORCE_OVERWRITE: bool = False) -> None
+
+   Generate a config file `radiocc.yaml` in the current directory.
+
+

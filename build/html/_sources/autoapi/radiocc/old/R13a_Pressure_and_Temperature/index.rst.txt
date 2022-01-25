@@ -1,0 +1,22 @@
+:py:mod:`radiocc.old.R13a_Pressure_and_Temperature`
+===================================================
+
+.. py:module:: radiocc.old.R13a_Pressure_and_Temperature
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   radiocc.old.R13a_Pressure_and_Temperature.Temp_Pre
+
+
+
+.. py:function:: Temp_Pre(N_data, T_BC, Nn, bend_radius, i_neut_upp, i_Surface, kB, G, m_bar, M_Mars, refractivity)
+
+

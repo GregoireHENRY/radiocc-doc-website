@@ -1,0 +1,155 @@
+:py:mod:`radiocc.utils`
+=======================
+
+.. py:module:: radiocc.utils
+
+.. autoapi-nested-parse::
+
+   Toolbox.
+
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   radiocc.utils.AutoEnum
+   radiocc.utils.GetAttributes
+
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   radiocc.utils.directories
+   radiocc.utils.format_info
+   radiocc.utils.format_validation
+   radiocc.utils.format_error
+   radiocc.utils.print_info
+   radiocc.utils.print_validation
+   radiocc.utils.print_error
+   radiocc.utils.raise_error
+   radiocc.utils.form_yes_or_no
+   radiocc.utils.form_choice
+   radiocc.utils.form_overwrite_file
+   radiocc.utils.yaml_represent_none
+   radiocc.utils.yaml_add_representer_none
+   radiocc.utils.read_yaml
+
+
+
+Attributes
+~~~~~~~~~~
+
+.. autoapisummary::
+
+   radiocc.utils.DOTMAP_NONE
+
+
+.. py:data:: DOTMAP_NONE
+   
+
+   
+
+.. py:class:: AutoEnum
+
+   Bases: :py:obj:`enum.Enum`
+
+   Generic enumeration.
+
+   Derive from this class to define new enumerations.
+
+   .. py:method:: _generate_next_value_(name: str, start: int, count: int, last_values: List[str]) -> str
+
+      Generate the next value when not given.
+
+      name: the name of the member
+      start: the initial start value or None
+      count: the number of existing members
+      last_value: the last value assigned or None
+
+
+
+.. py:class:: GetAttributes
+
+   .. py:method:: get_attributes(self) -> Dict[str, Any]
+
+
+
+.. py:function:: directories(PATH: pathlib.Path, INCLUDES: Optional[Union[str, List[str]]] = None, EXCLUDES: Optional[Union[str, List[str]]] = None) -> Iterator[pathlib.Path]
+
+   Iterate over the directories of a given path.
+
+
+.. py:function:: format_info(MESSAGE: str) -> str
+
+   Format an info message.
+
+
+.. py:function:: format_validation(MESSAGE: str) -> str
+
+   Format a validation message.
+
+
+.. py:function:: format_error(MESSAGE: str) -> str
+
+   Format an error message.
+
+
+.. py:function:: print_info(MESSAGE: str) -> None
+
+   Print an info message with a template format.
+
+
+.. py:function:: print_validation(MESSAGE: str) -> None
+
+   Print a validation message with a template format.
+
+
+.. py:function:: print_error(MESSAGE: str) -> None
+
+   Print an error message with a template format.
+
+
+.. py:function:: raise_error(MESSAGE: str, ERROR: type = ValueError) -> None
+
+   Raise an error with a template format.
+
+
+.. py:function:: form_yes_or_no(QUESTION: str, DEFAULT_NO: bool = True) -> bool
+
+   Single yes or no question without recursion.
+
+   Credit:
+       Inspired from
+       @icamys commented on 29 Nov 2020 on Github,
+       https://gist.github.com/garrettdreyfus/8153571
+
+
+.. py:function:: form_choice(QUESTION: str, CHOICES: Iterable[Any], DEFAULT: int = 0) -> int
+
+   Form to ask a choice
+
+
+.. py:function:: form_overwrite_file(PATH: pathlib.Path, QUESTION: Optional[str] = None, DEFAULT_NO: bool = True) -> bool
+
+   Yes/no form to ask whether file should be overwritten if already existing.
+
+
+.. py:function:: yaml_represent_none(self: Any, _: Any) -> Any
+
+
+.. py:function:: yaml_add_representer_none() -> None
+
+
+.. py:function:: read_yaml(PATH: pathlib.Path) -> dotmap.DotMap
+
+   Load the yaml file.
+
+

@@ -1,0 +1,1153 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>radiocc.download_data &#8212; radiocc 0.6.14 documentation</title>
+    
+    <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
+    
+    <link rel="stylesheet"
+      href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+    
+      
+  
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/pydata-sphinx-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    
+    <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="radiocc.export" href="../export/index.html" />
+    <link rel="prev" title="radiocc.core" href="../core/index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../../../index.html">
+<p class="title">radiocc</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../usage.html">
+  Usage
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../index.html">
+  API Reference
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     radiocc
+    </span>
+   </code>
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../old/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.old
+      </span>
+     </code>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R10_Avg_BendAng_ImpParam/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R10_Avg_BendAng_ImpParam
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R11_Refractivity_and_Bending_Radius_v2/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R11_Refractivity_and_Bending_Radius_v2
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R12_Electron_Density/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R12_Electron_Density
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R13_Neutral_Number_Density/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R13_Neutral_Number_Density
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R13a_Pressure_and_Temperature/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R13a_Pressure_and_Temperature
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R14_Plot_check/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R14_Plot_check
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R15_Errors/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R15_Errors
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R16_Biasfit_Correction/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R16_Biasfit_Correction
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R17_Plot_profiles/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R17_Plot_profiles
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R17_Run_Routines1/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R17_Run_Routines1
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R18_Occ_Info_MVN/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R18_Occ_Info_MVN
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R4_State_Vectors_twoway_v2/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R4_State_Vectors_twoway_v2
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R5_Foot_Print/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R5_Foot_Print
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R6_Framework_Conversion/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R6_Framework_Conversion
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R7_Offset_Correction/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R7_Offset_Correction
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R8_Plot_Doppler_1/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R8_Plot_Doppler_1
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R9_BendAng_ImpParam_dn/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R9_BendAng_ImpParam_dn
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R9_BendAng_ImpParam_up/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R9_BendAng_ImpParam_up
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cli/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.cli
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../config/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.config
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../constants/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.constants
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../core/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.core
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.download_data
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../export/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.export
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../interface/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.interface
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../model/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.model
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../process_descriptor/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.process_descriptor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../process_parser/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.process_parser
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reconstruct/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.reconstruct
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../utils/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.utils
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-contents">
+   Module Contents
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#functions">
+     Functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#attributes">
+     Attributes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.update_ROSE_query_id">
+       update_ROSE_query_id
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.URL_PDS">
+       URL_PDS
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.PDS_URLPATH_SEARCH">
+       PDS_URLPATH_SEARCH
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.PDS_URLPATH_DOWNLOAD">
+       PDS_URLPATH_DOWNLOAD
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.PDS_QUERY">
+       PDS_QUERY
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.URL_MAVEN_ROSE_ROOT_SEARCH">
+       URL_MAVEN_ROSE_ROOT_SEARCH
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.URL_MAVEN_ROSE_ROOT_DOWNLOAD">
+       URL_MAVEN_ROSE_ROOT_DOWNLOAD
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.TEMPLATE_MAVEN_ROSE_BUNDLE">
+       TEMPLATE_MAVEN_ROSE_BUNDLE
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.MAVEN_ROSE_BUNDLE_DATA_PATHS">
+       MAVEN_ROSE_BUNDLE_DATA_PATHS
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.URLS_MAVEN_ROSE_SEARCH">
+       URLS_MAVEN_ROSE_SEARCH
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.URL_MAVEN_SPICE">
+       URL_MAVEN_SPICE
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.URLS">
+       URLS
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.MAVEN_MK_RGX">
+       MAVEN_MK_RGX
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.MAVEN_MK_RGX_GROUP">
+       MAVEN_MK_RGX_GROUP
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_YEARS">
+       REGEX_TEMPLATE_MAVEN_ROSE_YEARS
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_YEAR_GROUP">
+       REGEX_TEMPLATE_MAVEN_ROSE_YEAR_GROUP
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_MONTHS">
+       REGEX_TEMPLATE_MAVEN_ROSE_MONTHS
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_MONTH_GROUP">
+       REGEX_TEMPLATE_MAVEN_ROSE_MONTH_GROUP
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_DATA">
+       REGEX_TEMPLATE_MAVEN_ROSE_DATA
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_DATA_GROUP">
+       REGEX_TEMPLATE_MAVEN_ROSE_DATA_GROUP
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.MAVEN_RADIO_DATA_RGX">
+       MAVEN_RADIO_DATA_RGX
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.MAVEN_RADIO_DATA_RGX_TIME_GROUP">
+       MAVEN_RADIO_DATA_RGX_TIME_GROUP
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.DTPOOL_METHOD">
+       DTPOOL_METHOD
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.TIMEOUT">
+       TIMEOUT
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.START_INDEX">
+       START_INDEX
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.DIRNAME_PATTERN_SLICE">
+       DIRNAME_PATTERN_SLICE
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.parse_maven_meta_kernel_name">
+       parse_maven_meta_kernel_name
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.fetch_file">
+       fetch_file
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.find_kernels_to_load">
+       find_kernels_to_load
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.download_kernels">
+       download_kernels
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.find_ROSE_data_in_bundle">
+       find_ROSE_data_in_bundle
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.find_ROSE_data">
+       find_ROSE_data
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.get_relative_time">
+       get_relative_time
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.select_radio_data">
+       select_radio_data
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.get_csv_url_from_ROSE_data_query">
+       get_csv_url_from_ROSE_data_query
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.download_ROSE">
+       download_ROSE
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.find_spice_file_possibilities">
+       find_spice_file_possibilities
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.find_years_rse">
+       find_years_rse
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.find_months_rse">
+       find_months_rse
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.select_year">
+       select_year
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.select_month">
+       select_month
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.select_meta_kernel">
+       select_meta_kernel
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.select_files_by_date_and_version">
+       select_files_by_date_and_version
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.download_data.proceed">
+       proceed
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-radiocc.download_data">
+<span id="radiocc-download-data"></span><h1><a class="reference internal" href="#module-radiocc.download_data" title="radiocc.download_data"><code class="xref py py-mod docutils literal notranslate"><span class="pre">radiocc.download_data</span></code></a><a class="headerlink" href="#module-radiocc.download_data" title="Permalink to this headline">¶</a></h1>
+<p>Script to download MEX &amp; MAVEN data.</p>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.download_data.update_ROSE_query_id" title="radiocc.download_data.update_ROSE_query_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update_ROSE_query_id</span></code></a>(URL: urlpath.URL, CHANGES_ON_QUERY: Callable[[urlpath.URL], urlpath.URL]) → urlpath.URL</p></td>
+<td><p>To update URL.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.download_data.parse_maven_meta_kernel_name" title="radiocc.download_data.parse_maven_meta_kernel_name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parse_maven_meta_kernel_name</span></code></a>(META_KERNEL_NAME: str) → Optional[Tuple[int, int]]</p></td>
+<td><p>Find MAVEN meta kernel year and name from its name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.download_data.fetch_file" title="radiocc.download_data.fetch_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fetch_file</span></code></a>(URL: urlpath.URL, PATH: pathlib.Path, DESCRIPTION: str = '') → bool</p></td>
+<td><p>Fetch file online at URL and place it at PATH.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.download_data.find_kernels_to_load" title="radiocc.download_data.find_kernels_to_load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_kernels_to_load</span></code></a>(PATH: pathlib.Path) → List[str]</p></td>
+<td><p>Find the list of kernels to load from a meta kernel.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.download_data.download_kernels" title="radiocc.download_data.download_kernels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">download_kernels</span></code></a>(META_KERNEL: str) → None</p></td>
+<td><p>Download SPICE kernels.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.download_data.find_ROSE_data_in_bundle" title="radiocc.download_data.find_ROSE_data_in_bundle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_ROSE_data_in_bundle</span></code></a>(URL: urlpath.URL, BUNDLE: str) → Iterable[str]</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.download_data.find_ROSE_data" title="radiocc.download_data.find_ROSE_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_ROSE_data</span></code></a>(DATE: arrow.Arrow) → Dict[str, Iterable[str]]</p></td>
+<td><p>Download radio-science data from date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.download_data.get_relative_time" title="radiocc.download_data.get_relative_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_relative_time</span></code></a>(LEVEL: str, DATA: str) → Any</p></td>
+<td><p>Compute relative time.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.download_data.select_radio_data" title="radiocc.download_data.select_radio_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_radio_data</span></code></a>(RADIO_DATA: Dict[str, Iterable[str]]) → Dict[str, str]</p></td>
+<td><p>Select which date to consider for the data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.download_data.get_csv_url_from_ROSE_data_query" title="radiocc.download_data.get_csv_url_from_ROSE_data_query"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_csv_url_from_ROSE_data_query</span></code></a>(QUERY: str) → Tuple[str, urlpath.URL]</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.download_data.download_ROSE" title="radiocc.download_data.download_ROSE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">download_ROSE</span></code></a>(DATE: arrow.Arrow) → Tuple[pathlib.Path, radiocc.model.RadioDataType]</p></td>
+<td><p>Download radio-science data from date.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.download_data.find_spice_file_possibilities" title="radiocc.download_data.find_spice_file_possibilities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_spice_file_possibilities</span></code></a>() → Dict[int, Dict[int, str]]</p></td>
+<td><p>Find available years for SPICE input data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.download_data.find_years_rse" title="radiocc.download_data.find_years_rse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_years_rse</span></code></a>() → List[int]</p></td>
+<td><p>Find available years for RSE input data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.download_data.find_months_rse" title="radiocc.download_data.find_months_rse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_months_rse</span></code></a>(YEAR: int) → List[int]</p></td>
+<td><p>Find available months for RSE input data at specific year.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.download_data.select_year" title="radiocc.download_data.select_year"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_year</span></code></a>(YEARS: List[int]) → int</p></td>
+<td><p>Select which date to consider for the data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.download_data.select_month" title="radiocc.download_data.select_month"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_month</span></code></a>(MONTHS: List[int]) → int</p></td>
+<td><p>Select which date to consider for the data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.download_data.select_meta_kernel" title="radiocc.download_data.select_meta_kernel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_meta_kernel</span></code></a>(VERSIONS: Dict[int, str]) → str</p></td>
+<td><p>Find a select a kernel version to obtain the meta kernel name.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.download_data.select_files_by_date_and_version" title="radiocc.download_data.select_files_by_date_and_version"><code class="xref py py-obj docutils literal notranslate"><span class="pre">select_files_by_date_and_version</span></code></a>() → Tuple[arrow.Arrow, str]</p></td>
+<td><p>Select which files to download regarding the configuration.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.download_data.proceed" title="radiocc.download_data.proceed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">proceed</span></code></a>() → None</p></td>
+<td><p>Download input data: SPICE kernels &amp; RSE.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.download_data.URL_PDS" title="radiocc.download_data.URL_PDS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">URL_PDS</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.download_data.PDS_URLPATH_SEARCH" title="radiocc.download_data.PDS_URLPATH_SEARCH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PDS_URLPATH_SEARCH</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.download_data.PDS_URLPATH_DOWNLOAD" title="radiocc.download_data.PDS_URLPATH_DOWNLOAD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PDS_URLPATH_DOWNLOAD</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.download_data.PDS_QUERY" title="radiocc.download_data.PDS_QUERY"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PDS_QUERY</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.download_data.URL_MAVEN_ROSE_ROOT_SEARCH" title="radiocc.download_data.URL_MAVEN_ROSE_ROOT_SEARCH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">URL_MAVEN_ROSE_ROOT_SEARCH</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.download_data.URL_MAVEN_ROSE_ROOT_DOWNLOAD" title="radiocc.download_data.URL_MAVEN_ROSE_ROOT_DOWNLOAD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">URL_MAVEN_ROSE_ROOT_DOWNLOAD</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.download_data.TEMPLATE_MAVEN_ROSE_BUNDLE" title="radiocc.download_data.TEMPLATE_MAVEN_ROSE_BUNDLE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TEMPLATE_MAVEN_ROSE_BUNDLE</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.download_data.MAVEN_ROSE_BUNDLE_DATA_PATHS" title="radiocc.download_data.MAVEN_ROSE_BUNDLE_DATA_PATHS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MAVEN_ROSE_BUNDLE_DATA_PATHS</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.download_data.URLS_MAVEN_ROSE_SEARCH" title="radiocc.download_data.URLS_MAVEN_ROSE_SEARCH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">URLS_MAVEN_ROSE_SEARCH</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.download_data.URL_MAVEN_SPICE" title="radiocc.download_data.URL_MAVEN_SPICE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">URL_MAVEN_SPICE</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.download_data.URLS" title="radiocc.download_data.URLS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">URLS</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.download_data.MAVEN_MK_RGX" title="radiocc.download_data.MAVEN_MK_RGX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MAVEN_MK_RGX</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.download_data.MAVEN_MK_RGX_GROUP" title="radiocc.download_data.MAVEN_MK_RGX_GROUP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MAVEN_MK_RGX_GROUP</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_YEARS" title="radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_YEARS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">REGEX_TEMPLATE_MAVEN_ROSE_YEARS</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_YEAR_GROUP" title="radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_YEAR_GROUP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">REGEX_TEMPLATE_MAVEN_ROSE_YEAR_GROUP</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_MONTHS" title="radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_MONTHS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">REGEX_TEMPLATE_MAVEN_ROSE_MONTHS</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_MONTH_GROUP" title="radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_MONTH_GROUP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">REGEX_TEMPLATE_MAVEN_ROSE_MONTH_GROUP</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_DATA" title="radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_DATA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">REGEX_TEMPLATE_MAVEN_ROSE_DATA</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_DATA_GROUP" title="radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_DATA_GROUP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">REGEX_TEMPLATE_MAVEN_ROSE_DATA_GROUP</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.download_data.MAVEN_RADIO_DATA_RGX" title="radiocc.download_data.MAVEN_RADIO_DATA_RGX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MAVEN_RADIO_DATA_RGX</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.download_data.MAVEN_RADIO_DATA_RGX_TIME_GROUP" title="radiocc.download_data.MAVEN_RADIO_DATA_RGX_TIME_GROUP"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MAVEN_RADIO_DATA_RGX_TIME_GROUP</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.download_data.DTPOOL_METHOD" title="radiocc.download_data.DTPOOL_METHOD"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DTPOOL_METHOD</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.download_data.TIMEOUT" title="radiocc.download_data.TIMEOUT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TIMEOUT</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.download_data.START_INDEX" title="radiocc.download_data.START_INDEX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">START_INDEX</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.download_data.DIRNAME_PATTERN_SLICE" title="radiocc.download_data.DIRNAME_PATTERN_SLICE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DIRNAME_PATTERN_SLICE</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.download_data.update_ROSE_query_id">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">update_ROSE_query_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">URL</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">urlpath.URL</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CHANGES_ON_QUERY</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">urlpath.URL</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">urlpath.URL</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">urlpath.URL</span></span></span><a class="headerlink" href="#radiocc.download_data.update_ROSE_query_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>To update URL.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.download_data.URL_PDS">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">URL_PDS</span></span><a class="headerlink" href="#radiocc.download_data.URL_PDS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.download_data.PDS_URLPATH_SEARCH">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">PDS_URLPATH_SEARCH</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">search/view</span></em><a class="headerlink" href="#radiocc.download_data.PDS_URLPATH_SEARCH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.download_data.PDS_URLPATH_DOWNLOAD">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">PDS_URLPATH_DOWNLOAD</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">ditdos/write</span></em><a class="headerlink" href="#radiocc.download_data.PDS_URLPATH_DOWNLOAD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.download_data.PDS_QUERY">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">PDS_QUERY</span></span><a class="headerlink" href="#radiocc.download_data.PDS_QUERY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.download_data.URL_MAVEN_ROSE_ROOT_SEARCH">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">URL_MAVEN_ROSE_ROOT_SEARCH</span></span><a class="headerlink" href="#radiocc.download_data.URL_MAVEN_ROSE_ROOT_SEARCH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.download_data.URL_MAVEN_ROSE_ROOT_DOWNLOAD">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">URL_MAVEN_ROSE_ROOT_DOWNLOAD</span></span><a class="headerlink" href="#radiocc.download_data.URL_MAVEN_ROSE_ROOT_DOWNLOAD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.download_data.TEMPLATE_MAVEN_ROSE_BUNDLE">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">TEMPLATE_MAVEN_ROSE_BUNDLE</span></span><a class="headerlink" href="#radiocc.download_data.TEMPLATE_MAVEN_ROSE_BUNDLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.download_data.MAVEN_ROSE_BUNDLE_DATA_PATHS">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">MAVEN_ROSE_BUNDLE_DATA_PATHS</span></span><a class="headerlink" href="#radiocc.download_data.MAVEN_ROSE_BUNDLE_DATA_PATHS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.download_data.URLS_MAVEN_ROSE_SEARCH">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">URLS_MAVEN_ROSE_SEARCH</span></span><a class="headerlink" href="#radiocc.download_data.URLS_MAVEN_ROSE_SEARCH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.download_data.URL_MAVEN_SPICE">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">URL_MAVEN_SPICE</span></span><a class="headerlink" href="#radiocc.download_data.URL_MAVEN_SPICE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.download_data.URLS">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">URLS</span></span><a class="headerlink" href="#radiocc.download_data.URLS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.download_data.MAVEN_MK_RGX">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">MAVEN_MK_RGX</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">maven_\d{4}_v\d{2}\.tm</span></em><a class="headerlink" href="#radiocc.download_data.MAVEN_MK_RGX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.download_data.MAVEN_MK_RGX_GROUP">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">MAVEN_MK_RGX_GROUP</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">maven_(\d{4})_v(\d{2})\.tm</span></em><a class="headerlink" href="#radiocc.download_data.MAVEN_MK_RGX_GROUP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_YEARS">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">REGEX_TEMPLATE_MAVEN_ROSE_YEARS</span></span><a class="headerlink" href="#radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_YEARS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_YEAR_GROUP">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">REGEX_TEMPLATE_MAVEN_ROSE_YEAR_GROUP</span></span><a class="headerlink" href="#radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_YEAR_GROUP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_MONTHS">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">REGEX_TEMPLATE_MAVEN_ROSE_MONTHS</span></span><a class="headerlink" href="#radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_MONTHS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_MONTH_GROUP">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">REGEX_TEMPLATE_MAVEN_ROSE_MONTH_GROUP</span></span><a class="headerlink" href="#radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_MONTH_GROUP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_DATA">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">REGEX_TEMPLATE_MAVEN_ROSE_DATA</span></span><a class="headerlink" href="#radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_DATA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_DATA_GROUP">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">REGEX_TEMPLATE_MAVEN_ROSE_DATA_GROUP</span></span><a class="headerlink" href="#radiocc.download_data.REGEX_TEMPLATE_MAVEN_ROSE_DATA_GROUP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.download_data.MAVEN_RADIO_DATA_RGX">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">MAVEN_RADIO_DATA_RGX</span></span><a class="headerlink" href="#radiocc.download_data.MAVEN_RADIO_DATA_RGX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.download_data.MAVEN_RADIO_DATA_RGX_TIME_GROUP">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">MAVEN_RADIO_DATA_RGX_TIME_GROUP</span></span><a class="headerlink" href="#radiocc.download_data.MAVEN_RADIO_DATA_RGX_TIME_GROUP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.download_data.DTPOOL_METHOD">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">DTPOOL_METHOD</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">KERNELS_TO_LOAD</span></em><a class="headerlink" href="#radiocc.download_data.DTPOOL_METHOD" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.download_data.TIMEOUT">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">TIMEOUT</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">10.0</span></em><a class="headerlink" href="#radiocc.download_data.TIMEOUT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.download_data.START_INDEX">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">START_INDEX</span></span><em class="property"><span class="w"> </span><span class="pre">=</span> <span class="pre">0</span></em><a class="headerlink" href="#radiocc.download_data.START_INDEX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.download_data.DIRNAME_PATTERN_SLICE">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">DIRNAME_PATTERN_SLICE</span></span><a class="headerlink" href="#radiocc.download_data.DIRNAME_PATTERN_SLICE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.download_data.parse_maven_meta_kernel_name">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">parse_maven_meta_kernel_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">META_KERNEL_NAME</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#radiocc.download_data.parse_maven_meta_kernel_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find MAVEN meta kernel year and name from its name.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.download_data.fetch_file">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">fetch_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">URL</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">urlpath.URL</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PATH</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DESCRIPTION</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#radiocc.download_data.fetch_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetch file online at URL and place it at PATH.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.download_data.find_kernels_to_load">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">find_kernels_to_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">PATH</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#radiocc.download_data.find_kernels_to_load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the list of kernels to load from a meta kernel.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.download_data.download_kernels">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">download_kernels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">META_KERNEL</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#radiocc.download_data.download_kernels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download SPICE kernels.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.download_data.find_ROSE_data_in_bundle">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">find_ROSE_data_in_bundle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">URL</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">urlpath.URL</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">BUNDLE</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#radiocc.download_data.find_ROSE_data_in_bundle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.download_data.find_ROSE_data">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">find_ROSE_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">DATE</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">arrow.Arrow</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#radiocc.download_data.find_ROSE_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download radio-science data from date.</p>
+<p>The date contains year and month information.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.download_data.get_relative_time">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">get_relative_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">LEVEL</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DATA</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#radiocc.download_data.get_relative_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute relative time.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.download_data.select_radio_data">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">select_radio_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">RADIO_DATA</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#radiocc.download_data.select_radio_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select which date to consider for the data.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.download_data.get_csv_url_from_ROSE_data_query">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">get_csv_url_from_ROSE_data_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">QUERY</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">urlpath.URL</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#radiocc.download_data.get_csv_url_from_ROSE_data_query" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.download_data.download_ROSE">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">download_ROSE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">DATE</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">arrow.Arrow</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="../model/index.html#radiocc.model.RadioDataType" title="radiocc.model.RadioDataType"><span class="pre">radiocc.model.RadioDataType</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#radiocc.download_data.download_ROSE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download radio-science data from date.</p>
+<p>The date contains year and month information.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.download_data.find_spice_file_possibilities">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">find_spice_file_possibilities</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#radiocc.download_data.find_spice_file_possibilities" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find available years for SPICE input data.</p>
+<p>Return hashmap of every versions per year to meta kernels and meta kernels.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.download_data.find_years_rse">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">find_years_rse</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#radiocc.download_data.find_years_rse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find available years for RSE input data.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.download_data.find_months_rse">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">find_months_rse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">YEAR</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#radiocc.download_data.find_months_rse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find available months for RSE input data at specific year.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.download_data.select_year">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">select_year</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">YEARS</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#radiocc.download_data.select_year" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select which date to consider for the data.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.download_data.select_month">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">select_month</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MONTHS</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#radiocc.download_data.select_month" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select which date to consider for the data.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.download_data.select_meta_kernel">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">select_meta_kernel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">VERSIONS</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#radiocc.download_data.select_meta_kernel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find a select a kernel version to obtain the meta kernel name.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.download_data.select_files_by_date_and_version">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">select_files_by_date_and_version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">arrow.Arrow</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#radiocc.download_data.select_files_by_date_and_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select which files to download regarding the configuration.</p>
+<p>Return an Arrow date containing year and month information, and the meta kernel
+file chosen.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.download_data.proceed">
+<span class="sig-prename descclassname"><span class="pre">radiocc.download_data.</span></span><span class="sig-name descname"><span class="pre">proceed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#radiocc.download_data.proceed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download input data: SPICE kernels &amp; RSE.</p>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../core/index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">radiocc.core</span></code></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../export/index.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">radiocc.export</span></code></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+    <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, Grégoire Henry, Ananya Krishnan.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

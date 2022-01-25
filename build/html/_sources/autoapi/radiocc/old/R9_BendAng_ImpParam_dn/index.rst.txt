@@ -1,0 +1,29 @@
+:py:mod:`radiocc.old.R9_BendAng_ImpParam_dn`
+============================================
+
+.. py:module:: radiocc.old.R9_BendAng_ImpParam_dn
+
+.. autoapi-nested-parse::
+
+   Created on Mon Nov  4 10:56:32 2019
+
+   @author: ananya
+
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   radiocc.old.R9_BendAng_ImpParam_dn.Bend_dn
+
+
+
+.. py:function:: Bend_dn(N_data, r_MEX, z_MEX, z_GS, vr_MEX, vz_MEX, vr_GS, vz_GS, gamma, beta_e, delta_s, Doppler_debias, Bande, fsup, c)
+
+

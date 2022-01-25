@@ -1,0 +1,838 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>radiocc.utils &#8212; radiocc 0.6.14 documentation</title>
+    
+    <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
+    
+    <link rel="stylesheet"
+      href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+    
+      
+  
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/pydata-sphinx-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    
+    <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="prev" title="radiocc.reconstruct" href="../reconstruct/index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../../../index.html">
+<p class="title">radiocc</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../usage.html">
+  Usage
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../index.html">
+  API Reference
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     radiocc
+    </span>
+   </code>
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../old/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.old
+      </span>
+     </code>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R10_Avg_BendAng_ImpParam/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R10_Avg_BendAng_ImpParam
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R11_Refractivity_and_Bending_Radius_v2/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R11_Refractivity_and_Bending_Radius_v2
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R12_Electron_Density/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R12_Electron_Density
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R13_Neutral_Number_Density/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R13_Neutral_Number_Density
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R13a_Pressure_and_Temperature/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R13a_Pressure_and_Temperature
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R14_Plot_check/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R14_Plot_check
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R15_Errors/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R15_Errors
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R16_Biasfit_Correction/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R16_Biasfit_Correction
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R17_Plot_profiles/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R17_Plot_profiles
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R17_Run_Routines1/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R17_Run_Routines1
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R18_Occ_Info_MVN/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R18_Occ_Info_MVN
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R4_State_Vectors_twoway_v2/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R4_State_Vectors_twoway_v2
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R5_Foot_Print/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R5_Foot_Print
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R6_Framework_Conversion/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R6_Framework_Conversion
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R7_Offset_Correction/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R7_Offset_Correction
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R8_Plot_Doppler_1/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R8_Plot_Doppler_1
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R9_BendAng_ImpParam_dn/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R9_BendAng_ImpParam_dn
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R9_BendAng_ImpParam_up/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R9_BendAng_ImpParam_up
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cli/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.cli
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../config/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.config
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../constants/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.constants
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../core/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.core
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../download_data/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.download_data
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../export/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.export
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../interface/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.interface
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../model/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.model
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../process_descriptor/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.process_descriptor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../process_parser/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.process_parser
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reconstruct/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.reconstruct
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.utils
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-contents">
+   Module Contents
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classes">
+     Classes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#functions">
+     Functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#attributes">
+     Attributes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.utils.DOTMAP_NONE">
+       DOTMAP_NONE
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.utils.AutoEnum">
+       AutoEnum
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.utils.AutoEnum._generate_next_value_">
+         _generate_next_value_
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.utils.GetAttributes">
+       GetAttributes
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.utils.GetAttributes.get_attributes">
+         get_attributes
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.utils.directories">
+       directories
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.utils.format_info">
+       format_info
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.utils.format_validation">
+       format_validation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.utils.format_error">
+       format_error
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.utils.print_info">
+       print_info
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.utils.print_validation">
+       print_validation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.utils.print_error">
+       print_error
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.utils.raise_error">
+       raise_error
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.utils.form_yes_or_no">
+       form_yes_or_no
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.utils.form_choice">
+       form_choice
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.utils.form_overwrite_file">
+       form_overwrite_file
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.utils.yaml_represent_none">
+       yaml_represent_none
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.utils.yaml_add_representer_none">
+       yaml_add_representer_none
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.utils.read_yaml">
+       read_yaml
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-radiocc.utils">
+<span id="radiocc-utils"></span><h1><a class="reference internal" href="#module-radiocc.utils" title="radiocc.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">radiocc.utils</span></code></a><a class="headerlink" href="#module-radiocc.utils" title="Permalink to this headline">¶</a></h1>
+<p>Toolbox.</p>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.utils.AutoEnum" title="radiocc.utils.AutoEnum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AutoEnum</span></code></a></p></td>
+<td><p>Generic enumeration.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.utils.GetAttributes" title="radiocc.utils.GetAttributes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GetAttributes</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.utils.directories" title="radiocc.utils.directories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">directories</span></code></a>(PATH: pathlib.Path, INCLUDES: Optional[Union[str, List[str]]] = None, EXCLUDES: Optional[Union[str, List[str]]] = None) → Iterator[pathlib.Path]</p></td>
+<td><p>Iterate over the directories of a given path.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.utils.format_info" title="radiocc.utils.format_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">format_info</span></code></a>(MESSAGE: str) → str</p></td>
+<td><p>Format an info message.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.utils.format_validation" title="radiocc.utils.format_validation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">format_validation</span></code></a>(MESSAGE: str) → str</p></td>
+<td><p>Format a validation message.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.utils.format_error" title="radiocc.utils.format_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">format_error</span></code></a>(MESSAGE: str) → str</p></td>
+<td><p>Format an error message.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.utils.print_info" title="radiocc.utils.print_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_info</span></code></a>(MESSAGE: str) → None</p></td>
+<td><p>Print an info message with a template format.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.utils.print_validation" title="radiocc.utils.print_validation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_validation</span></code></a>(MESSAGE: str) → None</p></td>
+<td><p>Print a validation message with a template format.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.utils.print_error" title="radiocc.utils.print_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">print_error</span></code></a>(MESSAGE: str) → None</p></td>
+<td><p>Print an error message with a template format.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.utils.raise_error" title="radiocc.utils.raise_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">raise_error</span></code></a>(MESSAGE: str, ERROR: type = ValueError) → None</p></td>
+<td><p>Raise an error with a template format.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.utils.form_yes_or_no" title="radiocc.utils.form_yes_or_no"><code class="xref py py-obj docutils literal notranslate"><span class="pre">form_yes_or_no</span></code></a>(QUESTION: str, DEFAULT_NO: bool = True) → bool</p></td>
+<td><p>Single yes or no question without recursion.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.utils.form_choice" title="radiocc.utils.form_choice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">form_choice</span></code></a>(QUESTION: str, CHOICES: Iterable[Any], DEFAULT: int = 0) → int</p></td>
+<td><p>Form to ask a choice</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.utils.form_overwrite_file" title="radiocc.utils.form_overwrite_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">form_overwrite_file</span></code></a>(PATH: pathlib.Path, QUESTION: Optional[str] = None, DEFAULT_NO: bool = True) → bool</p></td>
+<td><p>Yes/no form to ask whether file should be overwritten if already existing.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.utils.yaml_represent_none" title="radiocc.utils.yaml_represent_none"><code class="xref py py-obj docutils literal notranslate"><span class="pre">yaml_represent_none</span></code></a>(self: Any, _: Any) → Any</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.utils.yaml_add_representer_none" title="radiocc.utils.yaml_add_representer_none"><code class="xref py py-obj docutils literal notranslate"><span class="pre">yaml_add_representer_none</span></code></a>() → None</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.utils.read_yaml" title="radiocc.utils.read_yaml"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_yaml</span></code></a>(PATH: pathlib.Path) → dotmap.DotMap</p></td>
+<td><p>Load the yaml file.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.utils.DOTMAP_NONE" title="radiocc.utils.DOTMAP_NONE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DOTMAP_NONE</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py data">
+<dt class="sig sig-object py" id="radiocc.utils.DOTMAP_NONE">
+<span class="sig-prename descclassname"><span class="pre">radiocc.utils.</span></span><span class="sig-name descname"><span class="pre">DOTMAP_NONE</span></span><a class="headerlink" href="#radiocc.utils.DOTMAP_NONE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiocc.utils.AutoEnum">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiocc.utils.</span></span><span class="sig-name descname"><span class="pre">AutoEnum</span></span><a class="headerlink" href="#radiocc.utils.AutoEnum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">enum.Enum</span></code></p>
+<p>Generic enumeration.</p>
+<p>Derive from this class to define new enumerations.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="radiocc.utils.AutoEnum._generate_next_value_">
+<span class="sig-name descname"><span class="pre">_generate_next_value_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#radiocc.utils.AutoEnum._generate_next_value_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the next value when not given.</p>
+<p>name: the name of the member
+start: the initial start value or None
+count: the number of existing members
+last_value: the last value assigned or None</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiocc.utils.GetAttributes">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiocc.utils.</span></span><span class="sig-name descname"><span class="pre">GetAttributes</span></span><a class="headerlink" href="#radiocc.utils.GetAttributes" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="radiocc.utils.GetAttributes.get_attributes">
+<span class="sig-name descname"><span class="pre">get_attributes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#radiocc.utils.GetAttributes.get_attributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.utils.directories">
+<span class="sig-prename descclassname"><span class="pre">radiocc.utils.</span></span><span class="sig-name descname"><span class="pre">directories</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">PATH</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">INCLUDES</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">EXCLUDES</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">pathlib.Path</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#radiocc.utils.directories" title="Permalink to this definition">¶</a></dt>
+<dd><p>Iterate over the directories of a given path.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.utils.format_info">
+<span class="sig-prename descclassname"><span class="pre">radiocc.utils.</span></span><span class="sig-name descname"><span class="pre">format_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MESSAGE</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#radiocc.utils.format_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format an info message.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.utils.format_validation">
+<span class="sig-prename descclassname"><span class="pre">radiocc.utils.</span></span><span class="sig-name descname"><span class="pre">format_validation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MESSAGE</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#radiocc.utils.format_validation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format a validation message.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.utils.format_error">
+<span class="sig-prename descclassname"><span class="pre">radiocc.utils.</span></span><span class="sig-name descname"><span class="pre">format_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MESSAGE</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#radiocc.utils.format_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Format an error message.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.utils.print_info">
+<span class="sig-prename descclassname"><span class="pre">radiocc.utils.</span></span><span class="sig-name descname"><span class="pre">print_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MESSAGE</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#radiocc.utils.print_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print an info message with a template format.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.utils.print_validation">
+<span class="sig-prename descclassname"><span class="pre">radiocc.utils.</span></span><span class="sig-name descname"><span class="pre">print_validation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MESSAGE</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#radiocc.utils.print_validation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print a validation message with a template format.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.utils.print_error">
+<span class="sig-prename descclassname"><span class="pre">radiocc.utils.</span></span><span class="sig-name descname"><span class="pre">print_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MESSAGE</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#radiocc.utils.print_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Print an error message with a template format.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.utils.raise_error">
+<span class="sig-prename descclassname"><span class="pre">radiocc.utils.</span></span><span class="sig-name descname"><span class="pre">raise_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">MESSAGE</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ERROR</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">type</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">ValueError</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#radiocc.utils.raise_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raise an error with a template format.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.utils.form_yes_or_no">
+<span class="sig-prename descclassname"><span class="pre">radiocc.utils.</span></span><span class="sig-name descname"><span class="pre">form_yes_or_no</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">QUESTION</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DEFAULT_NO</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#radiocc.utils.form_yes_or_no" title="Permalink to this definition">¶</a></dt>
+<dd><p>Single yes or no question without recursion.</p>
+<dl class="simple">
+<dt>Credit:</dt><dd><p>Inspired from
+&#64;icamys commented on 29 Nov 2020 on Github,
+<a class="reference external" href="https://gist.github.com/garrettdreyfus/8153571">https://gist.github.com/garrettdreyfus/8153571</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.utils.form_choice">
+<span class="sig-prename descclassname"><span class="pre">radiocc.utils.</span></span><span class="sig-name descname"><span class="pre">form_choice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">QUESTION</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">CHOICES</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DEFAULT</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#radiocc.utils.form_choice" title="Permalink to this definition">¶</a></dt>
+<dd><p>Form to ask a choice</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.utils.form_overwrite_file">
+<span class="sig-prename descclassname"><span class="pre">radiocc.utils.</span></span><span class="sig-name descname"><span class="pre">form_overwrite_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">PATH</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">QUESTION</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DEFAULT_NO</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#radiocc.utils.form_overwrite_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Yes/no form to ask whether file should be overwritten if already existing.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.utils.yaml_represent_none">
+<span class="sig-prename descclassname"><span class="pre">radiocc.utils.</span></span><span class="sig-name descname"><span class="pre">yaml_represent_none</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#radiocc.utils.yaml_represent_none" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.utils.yaml_add_representer_none">
+<span class="sig-prename descclassname"><span class="pre">radiocc.utils.</span></span><span class="sig-name descname"><span class="pre">yaml_add_representer_none</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#radiocc.utils.yaml_add_representer_none" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.utils.read_yaml">
+<span class="sig-prename descclassname"><span class="pre">radiocc.utils.</span></span><span class="sig-name descname"><span class="pre">read_yaml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">PATH</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dotmap.DotMap</span></span></span><a class="headerlink" href="#radiocc.utils.read_yaml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the yaml file.</p>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../reconstruct/index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">radiocc.reconstruct</span></code></p>
+        </div>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+    <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, Grégoire Henry, Ananya Krishnan.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

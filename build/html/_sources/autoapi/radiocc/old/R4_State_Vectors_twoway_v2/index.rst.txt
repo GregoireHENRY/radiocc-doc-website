@@ -1,0 +1,29 @@
+:py:mod:`radiocc.old.R4_State_Vectors_twoway_v2`
+================================================
+
+.. py:module:: radiocc.old.R4_State_Vectors_twoway_v2
+
+.. autoapi-nested-parse::
+
+   Created on Tue Nov  5 15:26:40 2019
+
+   @author: ananya
+
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   radiocc.old.R4_State_Vectors_twoway_v2.ephemerides
+
+
+
+.. py:function:: ephemerides(N_data, ET, SC, GS, Mars, DATA_DIR, Ref_frame, FOLDER_TYPE: radiocc.model.ProcessType)
+
+

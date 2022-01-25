@@ -1,0 +1,22 @@
+:py:mod:`radiocc.old.R7_Offset_Correction`
+==========================================
+
+.. py:module:: radiocc.old.R7_Offset_Correction
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   radiocc.old.R7_Offset_Correction.Off_Cor
+
+
+
+.. py:function:: Off_Cor(Type, threshold, Doppler, Diff_doppler, ET, N_data, distance, CODE_DIR, i_integral, DATA_TYPE: Optional[radiocc.model.RadioDataType])
+
+

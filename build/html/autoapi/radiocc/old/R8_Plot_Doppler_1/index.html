@@ -1,0 +1,557 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>radiocc.old.R8_Plot_Doppler_1 &#8212; radiocc 0.6.14 documentation</title>
+    
+    <link href="../../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
+    
+    <link rel="stylesheet"
+      href="../../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+    
+      
+  
+    
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/pydata-sphinx-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    
+    <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/jquery.js"></script>
+    <script src="../../../../_static/underscore.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="radiocc.old.R9_BendAng_ImpParam_dn" href="../R9_BendAng_ImpParam_dn/index.html" />
+    <link rel="prev" title="radiocc.old.R7_Offset_Correction" href="../R7_Offset_Correction/index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../../../../index.html">
+<p class="title">radiocc</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../../usage.html">
+  Usage
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../../index.html">
+  API Reference
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../../index.html">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     radiocc
+    </span>
+   </code>
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active has-children">
+    <a class="reference internal" href="../index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.old
+      </span>
+     </code>
+    </a>
+    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul class="current">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../R10_Avg_BendAng_ImpParam/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R10_Avg_BendAng_ImpParam
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../R11_Refractivity_and_Bending_Radius_v2/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R11_Refractivity_and_Bending_Radius_v2
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../R12_Electron_Density/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R12_Electron_Density
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../R13_Neutral_Number_Density/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R13_Neutral_Number_Density
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../R13a_Pressure_and_Temperature/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R13a_Pressure_and_Temperature
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../R14_Plot_check/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R14_Plot_check
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../R15_Errors/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R15_Errors
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../R16_Biasfit_Correction/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R16_Biasfit_Correction
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../R17_Plot_profiles/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R17_Plot_profiles
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../R17_Run_Routines1/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R17_Run_Routines1
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../R18_Occ_Info_MVN/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R18_Occ_Info_MVN
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../R4_State_Vectors_twoway_v2/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R4_State_Vectors_twoway_v2
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../R5_Foot_Print/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R5_Foot_Print
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../R6_Framework_Conversion/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R6_Framework_Conversion
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../R7_Offset_Correction/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R7_Offset_Correction
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R8_Plot_Doppler_1
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../R9_BendAng_ImpParam_dn/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R9_BendAng_ImpParam_dn
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../R9_BendAng_ImpParam_up/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R9_BendAng_ImpParam_up
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../cli/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.cli
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../config/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.config
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../constants/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.constants
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../core/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.core
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../download_data/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.download_data
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../export/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.export
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../interface/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.interface
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../model/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.model
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../process_descriptor/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.process_descriptor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../process_parser/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.process_parser
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../reconstruct/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.reconstruct
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../utils/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.utils
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-contents">
+   Module Contents
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#functions">
+     Functions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.old.R8_Plot_Doppler_1.PLOT_Dop1">
+       PLOT_Dop1
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-radiocc.old.R8_Plot_Doppler_1">
+<span id="radiocc-old-r8-plot-doppler-1"></span><h1><a class="reference internal" href="#module-radiocc.old.R8_Plot_Doppler_1" title="radiocc.old.R8_Plot_Doppler_1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">radiocc.old.R8_Plot_Doppler_1</span></code></a><a class="headerlink" href="#module-radiocc.old.R8_Plot_Doppler_1" title="Permalink to this headline">¶</a></h1>
+<p>Created on Sun Aug 30 19:52:33 2020</p>
+<p>&#64;author: ananya</p>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.old.R8_Plot_Doppler_1.PLOT_Dop1" title="radiocc.old.R8_Plot_Doppler_1.PLOT_Dop1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PLOT_Dop1</span></code></a>(distance, Doppler, Doppler_debias, Doppler_biasfit, ET, PLOT_DIR, N_data)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="radiocc.old.R8_Plot_Doppler_1.PLOT_Dop1">
+<span class="sig-prename descclassname"><span class="pre">radiocc.old.R8_Plot_Doppler_1.</span></span><span class="sig-name descname"><span class="pre">PLOT_Dop1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">distance</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Doppler</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Doppler_debias</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Doppler_biasfit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ET</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PLOT_DIR</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiocc.old.R8_Plot_Doppler_1.PLOT_Dop1" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../R7_Offset_Correction/index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">radiocc.old.R7_Offset_Correction</span></code></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../R9_BendAng_ImpParam_dn/index.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">radiocc.old.R9_BendAng_ImpParam_dn</span></code></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+    <script src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, Grégoire Henry, Ananya Krishnan.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

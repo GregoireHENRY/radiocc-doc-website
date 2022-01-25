@@ -1,0 +1,1601 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>radiocc.model &#8212; radiocc 0.6.14 documentation</title>
+    
+    <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
+    
+    <link rel="stylesheet"
+      href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+    
+      
+  
+    
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/pydata-sphinx-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    
+    <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="radiocc.process_descriptor" href="../process_descriptor/index.html" />
+    <link rel="prev" title="radiocc.interface" href="../interface/index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../../../index.html">
+<p class="title">radiocc</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../usage.html">
+  Usage
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../index.html">
+  API Reference
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     radiocc
+    </span>
+   </code>
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../old/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.old
+      </span>
+     </code>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R10_Avg_BendAng_ImpParam/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R10_Avg_BendAng_ImpParam
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R11_Refractivity_and_Bending_Radius_v2/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R11_Refractivity_and_Bending_Radius_v2
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R12_Electron_Density/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R12_Electron_Density
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R13_Neutral_Number_Density/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R13_Neutral_Number_Density
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R13a_Pressure_and_Temperature/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R13a_Pressure_and_Temperature
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R14_Plot_check/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R14_Plot_check
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R15_Errors/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R15_Errors
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R16_Biasfit_Correction/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R16_Biasfit_Correction
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R17_Plot_profiles/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R17_Plot_profiles
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R17_Run_Routines1/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R17_Run_Routines1
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R18_Occ_Info_MVN/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R18_Occ_Info_MVN
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R4_State_Vectors_twoway_v2/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R4_State_Vectors_twoway_v2
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R5_Foot_Print/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R5_Foot_Print
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R6_Framework_Conversion/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R6_Framework_Conversion
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R7_Offset_Correction/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R7_Offset_Correction
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R8_Plot_Doppler_1/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R8_Plot_Doppler_1
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R9_BendAng_ImpParam_dn/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R9_BendAng_ImpParam_dn
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R9_BendAng_ImpParam_up/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R9_BendAng_ImpParam_up
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cli/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.cli
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../config/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.config
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../constants/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.constants
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../core/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.core
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../download_data/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.download_data
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../export/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.export
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../interface/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.interface
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.model
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../process_descriptor/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.process_descriptor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../process_parser/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.process_parser
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reconstruct/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.reconstruct
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../utils/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.utils
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-contents">
+   Module Contents
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classes">
+     Classes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.model.Folders">
+       Folders
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Folders.information">
+         information
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Folders.to_process">
+         to_process
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Folders.results">
+         results
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.model.ResultsFolders">
+       ResultsFolders
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.ResultsFolders.DATA">
+         DATA
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.ResultsFolders.PLOTS">
+         PLOTS
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.ResultsFolders.EPHEMERIDS">
+         EPHEMERIDS
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.model.FoldersError">
+       FoldersError
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.FoldersError.NotADir">
+         NotADir
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.FoldersError.MissingFolder">
+         MissingFolder
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.model.Bands">
+       Bands
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Bands.S">
+         S
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Bands.X">
+         X
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Bands.Diff">
+         Diff
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.model.Layers">
+       Layers
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Layers.Atmo">
+         Atmo
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Layers.Iono">
+         Iono
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.model.ProcessType">
+       ProcessType
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.ProcessType.MEX">
+         MEX
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.ProcessType.MAVEN">
+         MAVEN
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.model.KernelVersion">
+       KernelVersion
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.KernelVersion.FIRST">
+         FIRST
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.KernelVersion.LATEST">
+         LATEST
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.model.RadioDataType">
+       RadioDataType
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.RadioDataType.EGRESS">
+         EGRESS
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.RadioDataType.INGRESS">
+         INGRESS
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.RadioDataType.BOTH">
+         BOTH
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.model.LV2Loops">
+       LV2Loops
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.LV2Loops.IFMS">
+         IFMS
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.LV2Loops.DSN">
+         DSN
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.model.ConfigKeysReq">
+       ConfigKeysReq
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.model.ConfigKeysOpt">
+       ConfigKeysOpt
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.ConfigKeysOpt.information">
+         information
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.ConfigKeysOpt.to_process">
+         to_process
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.ConfigKeysOpt.results">
+         results
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.ConfigKeysOpt.folders">
+         folders
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.model.Config">
+       Config
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Config.__str__">
+         __str__
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Config.__repr__">
+         __repr__
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.model.ConfigBuilder">
+       ConfigBuilder
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.ConfigBuilder.information">
+         information
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.ConfigBuilder.to_process">
+         to_process
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.ConfigBuilder.results">
+         results
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.ConfigBuilder.build">
+         build
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.model.Scenario">
+       Scenario
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Scenario.results">
+         results
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Scenario.read_descriptor">
+         read_descriptor
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.model.MexData">
+       MexData
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.MexData.ET">
+         ET
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.MexData.UTC">
+         UTC
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.MexData.DISTANCE">
+         DISTANCE
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.MexData.DOPPLER">
+         DOPPLER
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.MexData.DIFF_DOPPLER">
+         DIFF_DOPPLER
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.MexData.ERROR">
+         ERROR
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.MexData.FSUP">
+         FSUP
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.MexData.SURFACES_CONDITIONS">
+         SURFACES_CONDITIONS
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.MexData.INTEGRAL_CONDITIONS">
+         INTEGRAL_CONDITIONS
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.model.MavenData">
+       MavenData
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.MavenData.ET">
+         ET
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.MavenData.DOPPLER">
+         DOPPLER
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.model.L2Data">
+       L2Data
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.L2Data.FOLDER_TYPE">
+         FOLDER_TYPE
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.L2Data.METADATA_FILE">
+         METADATA_FILE
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.L2Data.DATA_FILE">
+         DATA_FILE
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.L2Data.dsn_station_naif_code">
+         dsn_station_naif_code
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.L2Data.DISTANCE_UNIT">
+         DISTANCE_UNIT
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.L2Data.PLANET_NAIF_CODE">
+         PLANET_NAIF_CODE
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.L2Data.SPACECRAFT_NAIF_CODE">
+         SPACECRAFT_NAIF_CODE
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.L2Data.DATA">
+         DATA
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.model.PressTemp">
+       PressTemp
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.PressTemp.P_low">
+         P_low
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.PressTemp.P_med">
+         P_med
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.PressTemp.P_upp">
+         P_upp
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.PressTemp.T_low">
+         T_low
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.PressTemp.T_med">
+         T_med
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.PressTemp.T_upp">
+         T_upp
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.model.Export">
+       Export
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Export.DATA_PATH">
+         DATA_PATH
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Export.PLOT_PATH">
+         PLOT_PATH
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Export.EPHE_PATH">
+         EPHE_PATH
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Export.ET">
+         ET
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Export.DOPPLER">
+         DOPPLER
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Export.DOPPLER_DEBIAS">
+         DOPPLER_DEBIAS
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Export.DOPPLER_BIAS_FIT">
+         DOPPLER_BIAS_FIT
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Export.DISTANCE">
+         DISTANCE
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Export.REFRACTIVITY">
+         REFRACTIVITY
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Export.NE">
+         NE
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Export.TEC">
+         TEC
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Export.ERROR">
+         ERROR
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Export.ERROR_REFRAC">
+         ERROR_REFRAC
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Export.ERROR_ELEC">
+         ERROR_ELEC
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#radiocc.model.Export.PT">
+         PT
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <section id="module-radiocc.model">
+<span id="radiocc-model"></span><h1><a class="reference internal" href="#module-radiocc.model" title="radiocc.model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">radiocc.model</span></code></a><a class="headerlink" href="#module-radiocc.model" title="Permalink to this headline">¶</a></h1>
+<p>radiocc structure data models.</p>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h3>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.model.Folders" title="radiocc.model.Folders"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Folders</span></code></a></p></td>
+<td><p>Folders</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.model.ResultsFolders" title="radiocc.model.ResultsFolders"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ResultsFolders</span></code></a></p></td>
+<td><p>Results folders</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.model.FoldersError" title="radiocc.model.FoldersError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FoldersError</span></code></a></p></td>
+<td><p>Possible error related to the setting of the path to the folders.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.model.Bands" title="radiocc.model.Bands"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Bands</span></code></a></p></td>
+<td><p>Possible frequency bands.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.model.Layers" title="radiocc.model.Layers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Layers</span></code></a></p></td>
+<td><p>Possible atmospheric layers.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.model.ProcessType" title="radiocc.model.ProcessType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ProcessType</span></code></a></p></td>
+<td><p>Possible type of folder to be processed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.model.KernelVersion" title="radiocc.model.KernelVersion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">KernelVersion</span></code></a></p></td>
+<td><p>Possible ways to select kernel version in non-interactive mode.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.model.RadioDataType" title="radiocc.model.RadioDataType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RadioDataType</span></code></a></p></td>
+<td><p>A radio data</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.model.LV2Loops" title="radiocc.model.LV2Loops"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LV2Loops</span></code></a></p></td>
+<td><p>Possible type of folder in LVL2 data loop.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.model.ConfigKeysReq" title="radiocc.model.ConfigKeysReq"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ConfigKeysReq</span></code></a></p></td>
+<td><p>Required keys in config file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.model.ConfigKeysOpt" title="radiocc.model.ConfigKeysOpt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ConfigKeysOpt</span></code></a></p></td>
+<td><p>Optional keys in config file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.model.Config" title="radiocc.model.Config"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Config</span></code></a></p></td>
+<td><p>Structure representation the config.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.model.ConfigBuilder" title="radiocc.model.ConfigBuilder"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ConfigBuilder</span></code></a></p></td>
+<td><p>Structure representation the config.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.model.Scenario" title="radiocc.model.Scenario"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Scenario</span></code></a></p></td>
+<td><p>Structure representation of a scenario.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.model.MexData" title="radiocc.model.MexData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MexData</span></code></a></p></td>
+<td><p>Input data from MEX.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.model.MavenData" title="radiocc.model.MavenData"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MavenData</span></code></a></p></td>
+<td><p>Input data from MAVEN.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.model.L2Data" title="radiocc.model.L2Data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">L2Data</span></code></a></p></td>
+<td><p>Input data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.model.PressTemp" title="radiocc.model.PressTemp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PressTemp</span></code></a></p></td>
+<td><p>Structure representation of the data to be exported for pressure and</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.model.Export" title="radiocc.model.Export"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Export</span></code></a></p></td>
+<td><p>Structure representation of the data to be exported for a scenario.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="radiocc.model.Folders">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiocc.model.</span></span><span class="sig-name descname"><span class="pre">Folders</span></span><a class="headerlink" href="#radiocc.model.Folders" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../utils/index.html#radiocc.utils.AutoEnum" title="radiocc.utils.AutoEnum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">radiocc.utils.AutoEnum</span></code></a></p>
+<p>Folders</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.Folders.information">
+<span class="sig-name descname"><span class="pre">information</span></span><a class="headerlink" href="#radiocc.model.Folders.information" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.Folders.to_process">
+<span class="sig-name descname"><span class="pre">to_process</span></span><a class="headerlink" href="#radiocc.model.Folders.to_process" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.Folders.results">
+<span class="sig-name descname"><span class="pre">results</span></span><a class="headerlink" href="#radiocc.model.Folders.results" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiocc.model.ResultsFolders">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiocc.model.</span></span><span class="sig-name descname"><span class="pre">ResultsFolders</span></span><a class="headerlink" href="#radiocc.model.ResultsFolders" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../utils/index.html#radiocc.utils.AutoEnum" title="radiocc.utils.AutoEnum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">radiocc.utils.AutoEnum</span></code></a></p>
+<p>Results folders</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.ResultsFolders.DATA">
+<span class="sig-name descname"><span class="pre">DATA</span></span><a class="headerlink" href="#radiocc.model.ResultsFolders.DATA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.ResultsFolders.PLOTS">
+<span class="sig-name descname"><span class="pre">PLOTS</span></span><a class="headerlink" href="#radiocc.model.ResultsFolders.PLOTS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.ResultsFolders.EPHEMERIDS">
+<span class="sig-name descname"><span class="pre">EPHEMERIDS</span></span><a class="headerlink" href="#radiocc.model.ResultsFolders.EPHEMERIDS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiocc.model.FoldersError">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiocc.model.</span></span><span class="sig-name descname"><span class="pre">FoldersError</span></span><a class="headerlink" href="#radiocc.model.FoldersError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../utils/index.html#radiocc.utils.AutoEnum" title="radiocc.utils.AutoEnum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">radiocc.utils.AutoEnum</span></code></a></p>
+<p>Possible error related to the setting of the path to the folders.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.FoldersError.NotADir">
+<span class="sig-name descname"><span class="pre">NotADir</span></span><a class="headerlink" href="#radiocc.model.FoldersError.NotADir" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.FoldersError.MissingFolder">
+<span class="sig-name descname"><span class="pre">MissingFolder</span></span><a class="headerlink" href="#radiocc.model.FoldersError.MissingFolder" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiocc.model.Bands">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiocc.model.</span></span><span class="sig-name descname"><span class="pre">Bands</span></span><a class="headerlink" href="#radiocc.model.Bands" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../utils/index.html#radiocc.utils.AutoEnum" title="radiocc.utils.AutoEnum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">radiocc.utils.AutoEnum</span></code></a></p>
+<p>Possible frequency bands.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.Bands.S">
+<span class="sig-name descname"><span class="pre">S</span></span><a class="headerlink" href="#radiocc.model.Bands.S" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.Bands.X">
+<span class="sig-name descname"><span class="pre">X</span></span><a class="headerlink" href="#radiocc.model.Bands.X" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.Bands.Diff">
+<span class="sig-name descname"><span class="pre">Diff</span></span><a class="headerlink" href="#radiocc.model.Bands.Diff" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiocc.model.Layers">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiocc.model.</span></span><span class="sig-name descname"><span class="pre">Layers</span></span><a class="headerlink" href="#radiocc.model.Layers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../utils/index.html#radiocc.utils.AutoEnum" title="radiocc.utils.AutoEnum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">radiocc.utils.AutoEnum</span></code></a></p>
+<p>Possible atmospheric layers.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.Layers.Atmo">
+<span class="sig-name descname"><span class="pre">Atmo</span></span><a class="headerlink" href="#radiocc.model.Layers.Atmo" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.Layers.Iono">
+<span class="sig-name descname"><span class="pre">Iono</span></span><a class="headerlink" href="#radiocc.model.Layers.Iono" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiocc.model.ProcessType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiocc.model.</span></span><span class="sig-name descname"><span class="pre">ProcessType</span></span><a class="headerlink" href="#radiocc.model.ProcessType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../utils/index.html#radiocc.utils.AutoEnum" title="radiocc.utils.AutoEnum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">radiocc.utils.AutoEnum</span></code></a></p>
+<p>Possible type of folder to be processed.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.ProcessType.MEX">
+<span class="sig-name descname"><span class="pre">MEX</span></span><a class="headerlink" href="#radiocc.model.ProcessType.MEX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.ProcessType.MAVEN">
+<span class="sig-name descname"><span class="pre">MAVEN</span></span><a class="headerlink" href="#radiocc.model.ProcessType.MAVEN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiocc.model.KernelVersion">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiocc.model.</span></span><span class="sig-name descname"><span class="pre">KernelVersion</span></span><a class="headerlink" href="#radiocc.model.KernelVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../utils/index.html#radiocc.utils.AutoEnum" title="radiocc.utils.AutoEnum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">radiocc.utils.AutoEnum</span></code></a></p>
+<p>Possible ways to select kernel version in non-interactive mode.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.KernelVersion.FIRST">
+<span class="sig-name descname"><span class="pre">FIRST</span></span><a class="headerlink" href="#radiocc.model.KernelVersion.FIRST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.KernelVersion.LATEST">
+<span class="sig-name descname"><span class="pre">LATEST</span></span><a class="headerlink" href="#radiocc.model.KernelVersion.LATEST" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiocc.model.RadioDataType">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiocc.model.</span></span><span class="sig-name descname"><span class="pre">RadioDataType</span></span><a class="headerlink" href="#radiocc.model.RadioDataType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../utils/index.html#radiocc.utils.AutoEnum" title="radiocc.utils.AutoEnum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">radiocc.utils.AutoEnum</span></code></a></p>
+<p>A radio data</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.RadioDataType.EGRESS">
+<span class="sig-name descname"><span class="pre">EGRESS</span></span><a class="headerlink" href="#radiocc.model.RadioDataType.EGRESS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.RadioDataType.INGRESS">
+<span class="sig-name descname"><span class="pre">INGRESS</span></span><a class="headerlink" href="#radiocc.model.RadioDataType.INGRESS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.RadioDataType.BOTH">
+<span class="sig-name descname"><span class="pre">BOTH</span></span><a class="headerlink" href="#radiocc.model.RadioDataType.BOTH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiocc.model.LV2Loops">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiocc.model.</span></span><span class="sig-name descname"><span class="pre">LV2Loops</span></span><a class="headerlink" href="#radiocc.model.LV2Loops" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../utils/index.html#radiocc.utils.AutoEnum" title="radiocc.utils.AutoEnum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">radiocc.utils.AutoEnum</span></code></a></p>
+<p>Possible type of folder in LVL2 data loop.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.LV2Loops.IFMS">
+<span class="sig-name descname"><span class="pre">IFMS</span></span><a class="headerlink" href="#radiocc.model.LV2Loops.IFMS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.LV2Loops.DSN">
+<span class="sig-name descname"><span class="pre">DSN</span></span><a class="headerlink" href="#radiocc.model.LV2Loops.DSN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiocc.model.ConfigKeysReq">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiocc.model.</span></span><span class="sig-name descname"><span class="pre">ConfigKeysReq</span></span><a class="headerlink" href="#radiocc.model.ConfigKeysReq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../utils/index.html#radiocc.utils.AutoEnum" title="radiocc.utils.AutoEnum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">radiocc.utils.AutoEnum</span></code></a></p>
+<p>Required keys in config file.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiocc.model.ConfigKeysOpt">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiocc.model.</span></span><span class="sig-name descname"><span class="pre">ConfigKeysOpt</span></span><a class="headerlink" href="#radiocc.model.ConfigKeysOpt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../utils/index.html#radiocc.utils.AutoEnum" title="radiocc.utils.AutoEnum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">radiocc.utils.AutoEnum</span></code></a></p>
+<p>Optional keys in config file.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.ConfigKeysOpt.information">
+<span class="sig-name descname"><span class="pre">information</span></span><a class="headerlink" href="#radiocc.model.ConfigKeysOpt.information" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.ConfigKeysOpt.to_process">
+<span class="sig-name descname"><span class="pre">to_process</span></span><a class="headerlink" href="#radiocc.model.ConfigKeysOpt.to_process" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.ConfigKeysOpt.results">
+<span class="sig-name descname"><span class="pre">results</span></span><a class="headerlink" href="#radiocc.model.ConfigKeysOpt.results" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.ConfigKeysOpt.folders">
+<span class="sig-name descname"><span class="pre">folders</span></span><a class="headerlink" href="#radiocc.model.ConfigKeysOpt.folders" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiocc.model.Config">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiocc.model.</span></span><span class="sig-name descname"><span class="pre">Config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">INFORMATION</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">TO_PROCESS</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">RESULTS</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiocc.model.Config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../utils/index.html#radiocc.utils.GetAttributes" title="radiocc.utils.GetAttributes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">radiocc.utils.GetAttributes</span></code></a></p>
+<p>Structure representation the config.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="radiocc.model.Config.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#radiocc.model.Config.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return str(self).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiocc.model.Config.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#radiocc.model.Config.__repr__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return repr(self).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiocc.model.ConfigBuilder">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiocc.model.</span></span><span class="sig-name descname"><span class="pre">ConfigBuilder</span></span><a class="headerlink" href="#radiocc.model.ConfigBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../utils/index.html#radiocc.utils.GetAttributes" title="radiocc.utils.GetAttributes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">radiocc.utils.GetAttributes</span></code></a></p>
+<p>Structure representation the config.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.ConfigBuilder.information">
+<span class="sig-name descname"><span class="pre">information</span></span><em class="property"><span class="w"> </span><span class="pre">:Optional[pathlib.Path]</span></em><a class="headerlink" href="#radiocc.model.ConfigBuilder.information" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.ConfigBuilder.to_process">
+<span class="sig-name descname"><span class="pre">to_process</span></span><em class="property"><span class="w"> </span><span class="pre">:Optional[pathlib.Path]</span></em><a class="headerlink" href="#radiocc.model.ConfigBuilder.to_process" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.ConfigBuilder.results">
+<span class="sig-name descname"><span class="pre">results</span></span><em class="property"><span class="w"> </span><span class="pre">:Optional[pathlib.Path]</span></em><a class="headerlink" href="#radiocc.model.ConfigBuilder.results" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiocc.model.ConfigBuilder.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#radiocc.model.Config" title="radiocc.model.Config"><span class="pre">Config</span></a></span></span><a class="headerlink" href="#radiocc.model.ConfigBuilder.build" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiocc.model.Scenario">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiocc.model.</span></span><span class="sig-name descname"><span class="pre">Scenario</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">TO_PROCESS</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">BAND</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#radiocc.model.Bands" title="radiocc.model.Bands"><span class="pre">Bands</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">LAYER</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#radiocc.model.Layers" title="radiocc.model.Layers"><span class="pre">Layers</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">INDEX_PROCESS</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#radiocc.model.Scenario" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure representation of a scenario.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="radiocc.model.Scenario.results">
+<span class="sig-name descname"><span class="pre">results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">RESULTS</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pathlib.Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pathlib.Path</span></span></span><a class="headerlink" href="#radiocc.model.Scenario.results" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="radiocc.model.Scenario.read_descriptor">
+<span class="sig-name descname"><span class="pre">read_descriptor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dotmap.DotMap</span></span></span><a class="headerlink" href="#radiocc.model.Scenario.read_descriptor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiocc.model.MexData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiocc.model.</span></span><span class="sig-name descname"><span class="pre">MexData</span></span><a class="headerlink" href="#radiocc.model.MexData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Input data from MEX.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.MexData.ET">
+<span class="sig-name descname"><span class="pre">ET</span></span><em class="property"><span class="w"> </span><span class="pre">:nptyping.NDArray[float]</span></em><a class="headerlink" href="#radiocc.model.MexData.ET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.MexData.UTC">
+<span class="sig-name descname"><span class="pre">UTC</span></span><em class="property"><span class="w"> </span><span class="pre">:List[str]</span></em><a class="headerlink" href="#radiocc.model.MexData.UTC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.MexData.DISTANCE">
+<span class="sig-name descname"><span class="pre">DISTANCE</span></span><em class="property"><span class="w"> </span><span class="pre">:nptyping.NDArray[float]</span></em><a class="headerlink" href="#radiocc.model.MexData.DISTANCE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.MexData.DOPPLER">
+<span class="sig-name descname"><span class="pre">DOPPLER</span></span><em class="property"><span class="w"> </span><span class="pre">:nptyping.NDArray[float]</span></em><a class="headerlink" href="#radiocc.model.MexData.DOPPLER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.MexData.DIFF_DOPPLER">
+<span class="sig-name descname"><span class="pre">DIFF_DOPPLER</span></span><em class="property"><span class="w"> </span><span class="pre">:nptyping.NDArray[float]</span></em><a class="headerlink" href="#radiocc.model.MexData.DIFF_DOPPLER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.MexData.ERROR">
+<span class="sig-name descname"><span class="pre">ERROR</span></span><em class="property"><span class="w"> </span><span class="pre">:nptyping.NDArray[float]</span></em><a class="headerlink" href="#radiocc.model.MexData.ERROR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.MexData.FSUP">
+<span class="sig-name descname"><span class="pre">FSUP</span></span><em class="property"><span class="w"> </span><span class="pre">:float</span></em><a class="headerlink" href="#radiocc.model.MexData.FSUP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.MexData.SURFACES_CONDITIONS">
+<span class="sig-name descname"><span class="pre">SURFACES_CONDITIONS</span></span><em class="property"><span class="w"> </span><span class="pre">:nptyping.NDArray[bool]</span></em><a class="headerlink" href="#radiocc.model.MexData.SURFACES_CONDITIONS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.MexData.INTEGRAL_CONDITIONS">
+<span class="sig-name descname"><span class="pre">INTEGRAL_CONDITIONS</span></span><em class="property"><span class="w"> </span><span class="pre">:nptyping.NDArray[bool]</span></em><a class="headerlink" href="#radiocc.model.MexData.INTEGRAL_CONDITIONS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiocc.model.MavenData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiocc.model.</span></span><span class="sig-name descname"><span class="pre">MavenData</span></span><a class="headerlink" href="#radiocc.model.MavenData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Input data from MAVEN.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.MavenData.ET">
+<span class="sig-name descname"><span class="pre">ET</span></span><em class="property"><span class="w"> </span><span class="pre">:nptyping.NDArray[float]</span></em><a class="headerlink" href="#radiocc.model.MavenData.ET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.MavenData.DOPPLER">
+<span class="sig-name descname"><span class="pre">DOPPLER</span></span><em class="property"><span class="w"> </span><span class="pre">:nptyping.NDArray[float]</span></em><a class="headerlink" href="#radiocc.model.MavenData.DOPPLER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiocc.model.L2Data">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiocc.model.</span></span><span class="sig-name descname"><span class="pre">L2Data</span></span><a class="headerlink" href="#radiocc.model.L2Data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Input data.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.L2Data.FOLDER_TYPE">
+<span class="sig-name descname"><span class="pre">FOLDER_TYPE</span></span><em class="property"><span class="w"> </span><span class="pre">:ProcessType</span></em><a class="headerlink" href="#radiocc.model.L2Data.FOLDER_TYPE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.L2Data.METADATA_FILE">
+<span class="sig-name descname"><span class="pre">METADATA_FILE</span></span><em class="property"><span class="w"> </span><span class="pre">:pathlib.Path</span></em><a class="headerlink" href="#radiocc.model.L2Data.METADATA_FILE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.L2Data.DATA_FILE">
+<span class="sig-name descname"><span class="pre">DATA_FILE</span></span><em class="property"><span class="w"> </span><span class="pre">:pathlib.Path</span></em><a class="headerlink" href="#radiocc.model.L2Data.DATA_FILE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.L2Data.dsn_station_naif_code">
+<span class="sig-name descname"><span class="pre">dsn_station_naif_code</span></span><em class="property"><span class="w"> </span><span class="pre">:int</span></em><a class="headerlink" href="#radiocc.model.L2Data.dsn_station_naif_code" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.L2Data.DISTANCE_UNIT">
+<span class="sig-name descname"><span class="pre">DISTANCE_UNIT</span></span><em class="property"><span class="w"> </span><span class="pre">:str</span></em><a class="headerlink" href="#radiocc.model.L2Data.DISTANCE_UNIT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.L2Data.PLANET_NAIF_CODE">
+<span class="sig-name descname"><span class="pre">PLANET_NAIF_CODE</span></span><em class="property"><span class="w"> </span><span class="pre">:int</span></em><a class="headerlink" href="#radiocc.model.L2Data.PLANET_NAIF_CODE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.L2Data.SPACECRAFT_NAIF_CODE">
+<span class="sig-name descname"><span class="pre">SPACECRAFT_NAIF_CODE</span></span><em class="property"><span class="w"> </span><span class="pre">:int</span></em><a class="headerlink" href="#radiocc.model.L2Data.SPACECRAFT_NAIF_CODE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.L2Data.DATA">
+<span class="sig-name descname"><span class="pre">DATA</span></span><em class="property"><span class="w"> </span><span class="pre">:Union[MexData,</span> <span class="pre">MavenData]</span></em><a class="headerlink" href="#radiocc.model.L2Data.DATA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiocc.model.PressTemp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiocc.model.</span></span><span class="sig-name descname"><span class="pre">PressTemp</span></span><a class="headerlink" href="#radiocc.model.PressTemp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure representation of the data to be exported for pressure and
+temperature.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.PressTemp.P_low">
+<span class="sig-name descname"><span class="pre">P_low</span></span><em class="property"><span class="w"> </span><span class="pre">:nptyping.NDArray[float]</span></em><a class="headerlink" href="#radiocc.model.PressTemp.P_low" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.PressTemp.P_med">
+<span class="sig-name descname"><span class="pre">P_med</span></span><em class="property"><span class="w"> </span><span class="pre">:nptyping.NDArray[float]</span></em><a class="headerlink" href="#radiocc.model.PressTemp.P_med" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.PressTemp.P_upp">
+<span class="sig-name descname"><span class="pre">P_upp</span></span><em class="property"><span class="w"> </span><span class="pre">:nptyping.NDArray[float]</span></em><a class="headerlink" href="#radiocc.model.PressTemp.P_upp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.PressTemp.T_low">
+<span class="sig-name descname"><span class="pre">T_low</span></span><em class="property"><span class="w"> </span><span class="pre">:nptyping.NDArray[float]</span></em><a class="headerlink" href="#radiocc.model.PressTemp.T_low" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.PressTemp.T_med">
+<span class="sig-name descname"><span class="pre">T_med</span></span><em class="property"><span class="w"> </span><span class="pre">:nptyping.NDArray[float]</span></em><a class="headerlink" href="#radiocc.model.PressTemp.T_med" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.PressTemp.T_upp">
+<span class="sig-name descname"><span class="pre">T_upp</span></span><em class="property"><span class="w"> </span><span class="pre">:nptyping.NDArray[float]</span></em><a class="headerlink" href="#radiocc.model.PressTemp.T_upp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="radiocc.model.Export">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">radiocc.model.</span></span><span class="sig-name descname"><span class="pre">Export</span></span><a class="headerlink" href="#radiocc.model.Export" title="Permalink to this definition">¶</a></dt>
+<dd><p>Structure representation of the data to be exported for a scenario.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.Export.DATA_PATH">
+<span class="sig-name descname"><span class="pre">DATA_PATH</span></span><em class="property"><span class="w"> </span><span class="pre">:pathlib.Path</span></em><a class="headerlink" href="#radiocc.model.Export.DATA_PATH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.Export.PLOT_PATH">
+<span class="sig-name descname"><span class="pre">PLOT_PATH</span></span><em class="property"><span class="w"> </span><span class="pre">:pathlib.Path</span></em><a class="headerlink" href="#radiocc.model.Export.PLOT_PATH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.Export.EPHE_PATH">
+<span class="sig-name descname"><span class="pre">EPHE_PATH</span></span><em class="property"><span class="w"> </span><span class="pre">:pathlib.Path</span></em><a class="headerlink" href="#radiocc.model.Export.EPHE_PATH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.Export.ET">
+<span class="sig-name descname"><span class="pre">ET</span></span><em class="property"><span class="w"> </span><span class="pre">:nptyping.NDArray[float]</span></em><a class="headerlink" href="#radiocc.model.Export.ET" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.Export.DOPPLER">
+<span class="sig-name descname"><span class="pre">DOPPLER</span></span><em class="property"><span class="w"> </span><span class="pre">:nptyping.NDArray[float]</span></em><a class="headerlink" href="#radiocc.model.Export.DOPPLER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.Export.DOPPLER_DEBIAS">
+<span class="sig-name descname"><span class="pre">DOPPLER_DEBIAS</span></span><em class="property"><span class="w"> </span><span class="pre">:nptyping.NDArray[float]</span></em><a class="headerlink" href="#radiocc.model.Export.DOPPLER_DEBIAS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.Export.DOPPLER_BIAS_FIT">
+<span class="sig-name descname"><span class="pre">DOPPLER_BIAS_FIT</span></span><em class="property"><span class="w"> </span><span class="pre">:nptyping.NDArray[float]</span></em><a class="headerlink" href="#radiocc.model.Export.DOPPLER_BIAS_FIT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.Export.DISTANCE">
+<span class="sig-name descname"><span class="pre">DISTANCE</span></span><em class="property"><span class="w"> </span><span class="pre">:nptyping.NDArray[float]</span></em><a class="headerlink" href="#radiocc.model.Export.DISTANCE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.Export.REFRACTIVITY">
+<span class="sig-name descname"><span class="pre">REFRACTIVITY</span></span><em class="property"><span class="w"> </span><span class="pre">:nptyping.NDArray[float]</span></em><a class="headerlink" href="#radiocc.model.Export.REFRACTIVITY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.Export.NE">
+<span class="sig-name descname"><span class="pre">NE</span></span><em class="property"><span class="w"> </span><span class="pre">:nptyping.NDArray[float]</span></em><a class="headerlink" href="#radiocc.model.Export.NE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.Export.TEC">
+<span class="sig-name descname"><span class="pre">TEC</span></span><em class="property"><span class="w"> </span><span class="pre">:Optional[nptyping.NDArray[float]]</span></em><a class="headerlink" href="#radiocc.model.Export.TEC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.Export.ERROR">
+<span class="sig-name descname"><span class="pre">ERROR</span></span><em class="property"><span class="w"> </span><span class="pre">:nptyping.NDArray[float]</span></em><a class="headerlink" href="#radiocc.model.Export.ERROR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.Export.ERROR_REFRAC">
+<span class="sig-name descname"><span class="pre">ERROR_REFRAC</span></span><em class="property"><span class="w"> </span><span class="pre">:nptyping.NDArray[float]</span></em><a class="headerlink" href="#radiocc.model.Export.ERROR_REFRAC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.Export.ERROR_ELEC">
+<span class="sig-name descname"><span class="pre">ERROR_ELEC</span></span><em class="property"><span class="w"> </span><span class="pre">:nptyping.NDArray[float]</span></em><a class="headerlink" href="#radiocc.model.Export.ERROR_ELEC" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="radiocc.model.Export.PT">
+<span class="sig-name descname"><span class="pre">PT</span></span><em class="property"><span class="w"> </span><span class="pre">:Optional[PressTemp]</span></em><a class="headerlink" href="#radiocc.model.Export.PT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../interface/index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">radiocc.interface</span></code></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../process_descriptor/index.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">radiocc.process_descriptor</span></code></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+    <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, Grégoire Henry, Ananya Krishnan.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.4.0.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>
