@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-        echo "lol: $CHECK"
+        echo "$CHECK"
         exit 1
       - uses: actions/checkout@v2
       - name: Pull & update submodules recursively
