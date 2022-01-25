@@ -1,11 +1,15 @@
 name: Deploy to GitHub pages
-on:
-  push:
-    branches: [ main ]
+on: 
+  issue_comment:
+    types: created
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
+    if: ${{ github.event.issue.number == '2'
+        && github.event.issue.user.login == 'GregoireHENRY'
+        && github.event.comment.body == 'Bro you can update' }}
     steps:
     - name: Initialise repo
       uses: actions/checkout@v2
@@ -39,3 +43,8 @@ jobs:
         branch: gh-pages
         force: true
         directory: ./radiocc/doc/build
+
+    - name: Inform about build done
+      env:
+        TOKEN: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
+      run: 'curl -X POST -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer $TOKEN" https://api.github.com/repos/GregoireHENRY/radiocc-doc-website/issues/2/comments -d "{\"body\":\"Gotcha\"}"'
