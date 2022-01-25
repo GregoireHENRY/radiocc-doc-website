@@ -17,12 +17,12 @@ jobs:
 
       - name: Detect magic comment
         if: ${{ env.CHECK == true }}
-        run: echo "lol: $CHECK"
+        run: echo "$CHECK"
 
   update_module:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "lol: $CHECK"
+      - run: echo "$CHECK"
       - uses: actions/checkout@v2
       - name: Pull & update submodules recursively
         run: |
