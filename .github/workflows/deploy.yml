@@ -7,15 +7,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Initialize repo
-      uses: actions/checkout@v2
+    - name: Initialise repo
+      with:
+        submodules: recursive uses: actions/checkout@v2
 
     - name: Build documentation
       uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "radiocc/doc"
+
     - name: Postprocess build
       run: ./postprocess-build.sh 
+
     - name: Isolate build folder to be in separate branch
       run: |
         # cd build
