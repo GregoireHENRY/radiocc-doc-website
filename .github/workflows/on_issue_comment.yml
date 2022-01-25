@@ -10,11 +10,8 @@ jobs:
     env:
       USER: ${{ github.event.issue.user.login }}
       COMMENT: ${{ github.event.comment.body }}
+      CHECK: true
     steps:
-    - name: Default env
-      env:
-        CHECKED: true
-      run: echo "start"
     - name: Check if comment is not magic
       if: |
         !(github.event.issue.number == '1'
@@ -25,9 +22,10 @@ jobs:
       run: |
         echo "The user ${USER} commented ${COMMENT}"
         echo "The workflow will end now."
+        echo "::set-output name=checked::${CHECKED}"
     - id: export
       run: |
-        echo "lol: ${env.CHECKED}"
+        echo "lol: ${CHECKED}"
         echo "::set-output name=checked::${CHECKED}"
     outputs:
       checked: ${{ steps.export.outputs.checked }}
