@@ -10,28 +10,17 @@ jobs:
     env:
       USER: ${{ github.event.issue.user.login }}
       COMMENT: ${{ github.event.comment.body }}
-    steps:
-    - name: Check if comment is not magic
-      if: |
-        !(github.event.issue.number == '1'
-        && github.event.issue.user.login == 'GregoireHENRY'
-        && github.event.comment.body == 'Plz do dat build')
-      run: |
-        echo "The user ${USER} commented ${COMMENT}"
-        echo "The workflow will end now."
-    - name: Check if comment is magic
-      if: |
-        github.event.issue.number == '1'
+      CHECK: github.event.issue.number == '1'
         && github.event.issue.user.login == 'GregoireHENRY'
         && github.event.comment.body == 'Plz do dat build'
-      steps:
-      - name: TEST
-        run: |
-          echo "${{ needs.check_comment.outputs.checked }}"
-          exit 1
-      - name: First issue commented by the boss with magic word
-        run: |
-          echo "Yo if ya ask it dat wey i'll do it huh"
+    run: echo "lol: $CHECK"
+
+  update_module:
+    runs-on: ubuntu-latest
+    run: |
+      echo "lol: $CHECK"
+      exit 1
+    steps:
       - uses: actions/checkout@v2
       - name: Pull & update submodules recursively
         run: |
