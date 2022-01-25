@@ -14,16 +14,18 @@ jobs:
         && github.event.issue.user.login == 'GregoireHENRY'
         && github.event.comment.body == 'Plz do dat build' }}
     steps:
-
-      - name: Detect magic comment
-        if: ${{ env.CHECK == true }}
-        run: echo "$CHECK"
+      - id: export
+        name: Detect magic comment
+        run: echo "::set-output name=check::${CHECK}"
+    outputs:
+      check: ${{ steps.export.outputs.check }}
 
   update_module:
+    needs: check_comment
     runs-on: ubuntu-latest
     steps:
       - run: |
-        echo "${check_comment.CHECK}"
+        echo "${{ needs.check_comment.outputs.check }}"
         exit 1
       - uses: actions/checkout@v2
       - name: Pull & update submodules recursively
