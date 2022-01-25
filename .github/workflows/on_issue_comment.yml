@@ -10,44 +10,39 @@ jobs:
     env:
       USER: ${{ github.event.issue.user.login }}
       COMMENT: ${{ github.event.comment.body }}
-      CHECKED: true
     steps:
-    - id: export
-      name: Check if comment is not magic
+    - name: Check if comment is not magic
       if: |
         !(github.event.issue.number == '1'
         && github.event.issue.user.login == 'GregoireHENRY'
         && github.event.comment.body == 'Plz do dat build')
-      env:
-        CHECKED: false
       run: |
         echo "The user ${USER} commented ${COMMENT}"
         echo "The workflow will end now."
-        echo "::set-output name=checked::${CHECKED}"
-    outputs:
-      checked: ${{ steps.export.outputs.checked }} || false
-  
-  update_submodule:
-    needs: check_comment
-    runs-on: ubuntu-latest
-    # if: needs.check_comment.env.CHECKED == true
-    steps:
-    - name: TEST
-      run: |
-        echo "${{ needs.check_comment.outputs.checked }}"
-        exit 1
-    - name: First issue commented by the boss with magic word
-      run: |
-        echo "Yo if ya ask it dat wey i'll do it huh"
-    - uses: actions/checkout@v2
-    - name: Pull & update submodules recursively
-      run: |
-        git submodule update --init --recursive
-        git submodule update --recursive --remote
-    - name: Commit
-      run: |
-        git config user.name github-actions
-        git config user.email github-actions@github.com
-        git add .
-        git commit -m "auto: update submodules" || echo "No changes to commit"
-        git push
+    - name: Check if comment is magic
+      if: |
+        github.event.issue.number == '1'
+        && github.event.issue.user.login == 'GregoireHENRY'
+        && github.event.comment.body == 'Plz do dat build'
+      steps:
+      - name: TEST
+        run: |
+          echo "${{ needs.check_comment.outputs.checked }}"
+          exit 1
+      - name: First issue commented by the boss with magic word
+        run: |
+          echo "Yo if ya ask it dat wey i'll do it huh"
+      - uses: actions/checkout@v2
+      - name: Pull & update submodules recursively
+        run: |
+          git submodule update --init --recursive
+          git submodule update --recursive --remote
+      - name: Commit
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "auto: update submodules" || echo "No changes to commit"
+          git push
+        
+
