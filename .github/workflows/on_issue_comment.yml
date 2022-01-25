@@ -13,15 +13,14 @@ jobs:
       CHECK: ${{ github.event.issue.number == '1'
         && github.event.issue.user.login == 'GregoireHENRY'
         && github.event.comment.body == 'Plz do dat build' }}
+    if: CHECK
     steps:
-      - run: echo "$CHECK"
+      - run: echo "${CHECK}"
 
   update_module:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-        echo "$env.CHECK"
-        exit 1
+      - run: exit 1
       - uses: actions/checkout@v2
       - name: Pull & update submodules recursively
         run: |
