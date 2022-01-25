@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-        echo "${{ needs.check_comment.outputs.check }}"
+        echo ${{ needs.check_comment.outputs.check }}
         exit 1
       - uses: actions/checkout@v2
       - name: Pull & update submodules recursively
