@@ -29,9 +29,11 @@ jobs:
   update_submodule:
     needs: check_comment
     runs-on: ubuntu-latest
+    run:
+      echo needs.check_comment.env.CHECKED
     if: needs.check_comment.env.CHECKED == true
     env:
-      CHECKED: ${{ needs.check_comment.env.CHECKED }}
+      CHECKED: needs.check_comment.env.CHECKED
     steps:
     - name: TEST
       run: echo $CHECKED
