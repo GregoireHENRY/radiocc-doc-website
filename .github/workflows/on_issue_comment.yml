@@ -25,6 +25,7 @@ jobs:
       run: |
         echo "The user ${USER} commented ${COMMENT}"
         echo "The workflow will end now."
+        echo $CHECKED
     - id: export
       run: |
         echo "::set-output name=checked::${CHECKED}"
