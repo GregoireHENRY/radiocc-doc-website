@@ -10,7 +10,7 @@ jobs:
     env:
       USER: ${{ github.event.issue.user.login }}
       COMMENT: ${{ github.event.comment.body }}
-      CHECK: true
+      CHECKED: true
     steps:
     - name: Check if comment is not magic
       if: |
@@ -25,7 +25,6 @@ jobs:
         echo "::set-output name=checked::${CHECKED}"
     - id: export
       run: |
-        echo "lol: ${CHECKED}"
         echo "::set-output name=checked::${CHECKED}"
     outputs:
       checked: ${{ steps.export.outputs.checked }}
