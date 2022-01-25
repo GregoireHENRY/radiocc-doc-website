@@ -22,7 +22,7 @@ jobs:
   update_module:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "$CHECK"
+      - run: echo "$check_comment.CHECK"
       - uses: actions/checkout@v2
       - name: Pull & update submodules recursively
         run: |
