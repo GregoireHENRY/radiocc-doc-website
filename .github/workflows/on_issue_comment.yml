@@ -16,10 +16,12 @@ jobs:
     steps:
       - run: echo "$CHECK"
 
-
   update_module:
     runs-on: ubuntu-latest
     steps:
+      - run: |
+        echo "$CHECK"
+        exit 1
       - uses: actions/checkout@v2
       - name: Pull & update submodules recursively
         run: |
