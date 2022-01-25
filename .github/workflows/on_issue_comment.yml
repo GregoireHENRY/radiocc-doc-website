@@ -15,7 +15,7 @@ jobs:
       env:
         CHECKED: true
       run: echo "start"
-    - name: Detect not magic comment
+    - name: Skip if comment is not magic
       if: |
         !(github.event.issue.number == '1'
         && github.event.issue.user.login == 'GregoireHENRY'
@@ -25,18 +25,20 @@ jobs:
       run: |
         echo "The user ${USER} commented ${COMMENT}"
         echo "The workflow will end now."
+    - id: export
+      run: |
+        echo "::set-output name=checked::${CHECKED}"
+      outputs:
+        checked: ${{ steps.export.outputs.checked }}
   
   update_submodule:
     needs: check_comment
     runs-on: ubuntu-latest
     # if: needs.check_comment.env.CHECKED == true
-    env:
-      CHECKED: ${{ needs.check_comment.env.CHECKED }}
     steps:
     - name: TEST
       run: |
-        echo $CHECKED
-        echo ${{ needs.check_comment.env.CHECKED }}
+        echo ${{ needs.check_comment.outpus.checked }}
         exit 1
     - name: First issue commented by the boss with magic word
       run: |
