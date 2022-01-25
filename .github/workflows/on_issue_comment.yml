@@ -23,14 +23,11 @@ jobs:
         echo "The user ${USER} commented ${COMMENT}"
         echo "The workflow will end now."
         echo "::set-output name=checked::${CHECKED}"
-        echo "$CHECKED"
-        export CHECKED=$CHECKED
-        echo "$CHECKED"
     - id: export
       run: |
         echo "::set-output name=checked::${CHECKED}"
     outputs:
-      checked: ${{ steps.export.outputs.checked }}
+      checked: ${{ steps.export.outputs.checked }} || false
   
   update_submodule:
     needs: check_comment
