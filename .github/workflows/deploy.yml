@@ -5,6 +5,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    options: --user root
 
     steps:
     - name: Initialise repo
@@ -19,8 +20,8 @@ jobs:
 
     - name: Postprocess build
       run: |
-        sudo chmod +x ./postprocess-build.sh
-        sudo ./postprocess-build.sh 
+        chmod +x ./postprocess-build.sh
+        ./postprocess-build.sh 
 
     - name: Isolate build folder to be in separate branch
       run: |
