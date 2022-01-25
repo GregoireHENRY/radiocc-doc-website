@@ -36,6 +36,6 @@ jobs:
       uses: ad-m/github-push-action@v0.5.0
       with:
         github_token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
-        branch: build
+        branch: gh-pages
         force: true
         directory: ./radiocc/doc/build
