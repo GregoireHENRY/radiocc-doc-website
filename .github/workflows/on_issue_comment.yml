@@ -10,9 +10,9 @@ jobs:
     env:
       USER: ${{ github.event.issue.user.login }}
       COMMENT: ${{ github.event.comment.body }}
-      CHECK: github.event.issue.number == '1'
+      CHECK: ${{ github.event.issue.number == '1'
         && github.event.issue.user.login == 'GregoireHENRY'
-        && github.event.comment.body == 'Plz do dat build'
+        && github.event.comment.body == 'Plz do dat build' }}
     steps:
       - run: echo "$CHECK"
 
@@ -20,8 +20,6 @@ jobs:
   update_module:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-        exit 1
       - uses: actions/checkout@v2
       - name: Pull & update submodules recursively
         run: |
