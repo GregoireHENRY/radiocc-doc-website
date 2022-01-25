@@ -12,7 +12,8 @@ jobs:
       COMMENT: ${{ github.event.comment.body }}
       CHECKED: true
     steps:
-    - name: Check if comment is not magic
+    - id: export
+      name: Check if comment is not magic
       if: |
         !(github.event.issue.number == '1'
         && github.event.issue.user.login == 'GregoireHENRY'
@@ -22,9 +23,6 @@ jobs:
       run: |
         echo "The user ${USER} commented ${COMMENT}"
         echo "The workflow will end now."
-        echo "::set-output name=checked::${CHECKED}"
-    - id: export
-      run: |
         echo "::set-output name=checked::${CHECKED}"
     outputs:
       checked: ${{ steps.export.outputs.checked }} || false
