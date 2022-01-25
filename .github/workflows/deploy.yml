@@ -22,11 +22,20 @@ jobs:
         sudo chmod +x ./postprocess-build.sh
         sudo ./postprocess-build.sh 
 
-    - name: radiocc/doc/build is the new root (for the webpage)
+    - name: Isolate build folder to be in separate branch
       run: |
+        sudo chown -R $USER:$USER radiocc/doc/build
         cd radiocc/doc/build
+        git init
         git add -A
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git commit -m "deploy"
-        git subtree push --prefix radiocc/doc/build origin gh-pages
+        git commit -m 'deploy'
+
+    - name: Push it
+      uses: ad-m/github-push-action@v0.5.0
+      with:
+        github_token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
+        branch: build
+        force: true
+        directory: ./radiocc/doc/build
