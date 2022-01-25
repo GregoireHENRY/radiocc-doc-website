@@ -27,6 +27,7 @@ jobs:
         echo "The workflow will end now."
     - id: export
       run: |
+        echo "${CHECKED}"
         echo "::set-output name=checked::${CHECKED}"
     outputs:
       checked: ${{ steps.export.outputs.checked }}
