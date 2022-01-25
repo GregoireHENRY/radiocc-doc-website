@@ -18,7 +18,9 @@ jobs:
         docs-folder: "radiocc/doc"
 
     - name: Postprocess build
-      run: ./postprocess-build.sh 
+      run: |
+        chmod +x postprocess-build.sh
+        postprocess-build.sh 
 
     - name: Isolate build folder to be in separate branch
       run: |
