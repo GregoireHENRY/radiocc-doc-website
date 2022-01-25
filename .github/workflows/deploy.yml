@@ -25,12 +25,13 @@ jobs:
     - name: Isolate build folder to be in separate branch
       run: |
         # cd build
+        sudo chown -R $USER:$USER radiocc/doc/build
         cd radiocc/doc/build
         git init
         git add -A
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        /usr/bin/git commit -m 'deploy'
+        git commit -m 'deploy'
 
     - name: Push it
       uses: ad-m/github-push-action@v0.5.0
