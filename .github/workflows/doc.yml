@@ -45,3 +45,5 @@ jobs:
       with:
         name: html-docs
         path: radiocc/doc/build/html/
+    - name: Move site to root
+      run: mv radiocc/doc doc
