@@ -18,10 +18,10 @@ jobs:
 
   update_module:
     runs-on: ubuntu-latest
-    run: |
-      echo "lol: $CHECK"
-      exit 1
     steps:
+      - run: |
+        echo "lol: $CHECK"
+        exit 1
       - uses: actions/checkout@v2
       - name: Pull & update submodules recursively
         run: |
