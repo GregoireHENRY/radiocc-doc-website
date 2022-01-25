@@ -13,7 +13,8 @@ jobs:
       CHECK: github.event.issue.number == '1'
         && github.event.issue.user.login == 'GregoireHENRY'
         && github.event.comment.body == 'Plz do dat build'
-    run: echo "lol"
+    steps:
+      - run: echo "lol: ${CHECK}"
 
   update_module:
     runs-on: ubuntu-latest
