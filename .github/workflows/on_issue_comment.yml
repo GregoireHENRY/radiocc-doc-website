@@ -15,14 +15,14 @@ jobs:
         && github.event.comment.body == 'Plz do dat build' }}
     steps:
 
-      - name: test
+      - name: Detect magic comment
         if: ${{ env.CHECK == true }}
-        run: echo "$CHECK"
+        run: echo "lol: $CHECK"
 
   update_module:
     runs-on: ubuntu-latest
     steps:
-      - run: exit 1
+      - run: echo "lol: $CHECK"
       - uses: actions/checkout@v2
       - name: Pull & update submodules recursively
         run: |
