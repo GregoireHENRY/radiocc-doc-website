@@ -30,7 +30,7 @@ jobs:
         git add -A
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        sudo git commit -m 'deploy'
+        /usr/bin/git commit -m 'deploy'
 
     - name: Push it
       uses: ad-m/github-push-action@v0.5.0
