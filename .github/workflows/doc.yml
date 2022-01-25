@@ -43,7 +43,6 @@ jobs:
     needs: update_module
     if: ${{ needs.check_comment.outputs.check == 'true' }}
     steps:
-    - uses: actions/checkout@v2
     - uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "radiocc/doc/"
