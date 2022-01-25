@@ -23,4 +23,7 @@ jobs:
         sudo ./postprocess-build.sh 
 
     - name: radiocc/doc/build is the new root (for the webpage)
-      run: git subtree push --prefix radiocc/doc/build origin gh-pages
+      run: 
+        git add radiocc/doc/build
+        git commit -m "deploy"
+        git subtree push --prefix radiocc/doc/build origin gh-pages
