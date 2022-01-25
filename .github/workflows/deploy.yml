@@ -19,8 +19,8 @@ jobs:
 
     - name: Postprocess build
       run: |
-        chmod +x ./postprocess-build.sh
-        ./postprocess-build.sh 
+        sudo chmod +x ./postprocess-build.sh
+        sudo ./postprocess-build.sh 
 
     - name: Isolate build folder to be in separate branch
       run: |
