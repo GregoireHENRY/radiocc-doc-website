@@ -37,10 +37,11 @@ jobs:
         git add .
         git commit -m "auto: update submodules" || echo "No changes to commit"
         git push
+    - uses: actions/checkout@v2
     - uses: ammaraskar/sphinx-action@master
       with:
-        docs-folder: "radiocc/doc/"
+        docs-folder: "doc/"
     - uses: actions/upload-artifact@v2
       with:
         name: html-docs
-        path: radiocc/doc/build/html/
+        path: doc/build/html/
