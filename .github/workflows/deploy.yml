@@ -49,4 +49,6 @@ jobs:
         TOKEN: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
         MESSAGE: 'Gotcha! 🤖🪄 ✨'
         ISSUE: 'https://api.github.com/repos/GregoireHENRY/radiocc-doc-website/issues/2/comments'
-      run: $('curl -X POST -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer $TOKEN" "$ISSUE" -d "{\"body\":$MESSAGE}"')
+      run: |
+        echo 'curl -X POST -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer $TOKEN" $ISSUE -d "{\"body\":$MESSAGE}"'
+        'curl -X POST -H "Accept: application/vnd.github.v3+json" -H "Authorization: Bearer $TOKEN" $ISSUE -d "{\"body\":$MESSAGE}"'
