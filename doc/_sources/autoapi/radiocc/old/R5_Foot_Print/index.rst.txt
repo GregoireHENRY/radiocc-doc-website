@@ -1,0 +1,22 @@
+:py:mod:`radiocc.old.R5_Foot_Print`
+===================================
+
+.. py:module:: radiocc.old.R5_Foot_Print
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   radiocc.old.R5_Foot_Print.long_lat
+
+
+
+.. py:function:: long_lat(N_data, pos_MEX, vel_MEX, ET, ET_MEX_Mars, Ref_Frame, FOLDER_TYPE: radiocc.model.ProcessType)
+
+

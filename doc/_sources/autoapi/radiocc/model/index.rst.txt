@@ -1,0 +1,524 @@
+:py:mod:`radiocc.model`
+=======================
+
+.. py:module:: radiocc.model
+
+.. autoapi-nested-parse::
+
+   radiocc structure data models.
+
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   radiocc.model.Folders
+   radiocc.model.ResultsFolders
+   radiocc.model.FoldersError
+   radiocc.model.Bands
+   radiocc.model.Layers
+   radiocc.model.ProcessType
+   radiocc.model.KernelVersion
+   radiocc.model.RadioDataType
+   radiocc.model.LV2Loops
+   radiocc.model.ConfigKeysReq
+   radiocc.model.ConfigKeysOpt
+   radiocc.model.Config
+   radiocc.model.ConfigBuilder
+   radiocc.model.Scenario
+   radiocc.model.MexData
+   radiocc.model.MavenData
+   radiocc.model.L2Data
+   radiocc.model.PressTemp
+   radiocc.model.Export
+
+
+
+
+.. py:class:: Folders
+
+   Bases: :py:obj:`radiocc.utils.AutoEnum`
+
+   Folders
+
+   .. py:attribute:: information
+      
+
+      
+
+   .. py:attribute:: to_process
+      
+
+      
+
+   .. py:attribute:: results
+      
+
+      
+
+
+.. py:class:: ResultsFolders
+
+   Bases: :py:obj:`radiocc.utils.AutoEnum`
+
+   Results folders
+
+   .. py:attribute:: DATA
+      
+
+      
+
+   .. py:attribute:: PLOTS
+      
+
+      
+
+   .. py:attribute:: EPHEMERIDS
+      
+
+      
+
+
+.. py:class:: FoldersError
+
+   Bases: :py:obj:`radiocc.utils.AutoEnum`
+
+   Possible error related to the setting of the path to the folders.
+
+   .. py:attribute:: NotADir
+      
+
+      
+
+   .. py:attribute:: MissingFolder
+      
+
+      
+
+
+.. py:class:: Bands
+
+   Bases: :py:obj:`radiocc.utils.AutoEnum`
+
+   Possible frequency bands.
+
+   .. py:attribute:: S
+      
+
+      
+
+   .. py:attribute:: X
+      
+
+      
+
+   .. py:attribute:: Diff
+      
+
+      
+
+
+.. py:class:: Layers
+
+   Bases: :py:obj:`radiocc.utils.AutoEnum`
+
+   Possible atmospheric layers.
+
+   .. py:attribute:: Atmo
+      
+
+      
+
+   .. py:attribute:: Iono
+      
+
+      
+
+
+.. py:class:: ProcessType
+
+   Bases: :py:obj:`radiocc.utils.AutoEnum`
+
+   Possible type of folder to be processed.
+
+   .. py:attribute:: MEX
+      
+
+      
+
+   .. py:attribute:: MAVEN
+      
+
+      
+
+
+.. py:class:: KernelVersion
+
+   Bases: :py:obj:`radiocc.utils.AutoEnum`
+
+   Possible ways to select kernel version in non-interactive mode.
+
+   .. py:attribute:: FIRST
+      
+
+      
+
+   .. py:attribute:: LATEST
+      
+
+      
+
+
+.. py:class:: RadioDataType
+
+   Bases: :py:obj:`radiocc.utils.AutoEnum`
+
+   A radio data
+
+   .. py:attribute:: EGRESS
+      
+
+      
+
+   .. py:attribute:: INGRESS
+      
+
+      
+
+   .. py:attribute:: BOTH
+      
+
+      
+
+
+.. py:class:: LV2Loops
+
+   Bases: :py:obj:`radiocc.utils.AutoEnum`
+
+   Possible type of folder in LVL2 data loop.
+
+   .. py:attribute:: IFMS
+      
+
+      
+
+   .. py:attribute:: DSN
+      
+
+      
+
+
+.. py:class:: ConfigKeysReq
+
+   Bases: :py:obj:`radiocc.utils.AutoEnum`
+
+   Required keys in config file.
+
+
+.. py:class:: ConfigKeysOpt
+
+   Bases: :py:obj:`radiocc.utils.AutoEnum`
+
+   Optional keys in config file.
+
+   .. py:attribute:: information
+      
+
+      
+
+   .. py:attribute:: to_process
+      
+
+      
+
+   .. py:attribute:: results
+      
+
+      
+
+   .. py:attribute:: folders
+      
+
+      
+
+
+.. py:class:: Config(INFORMATION: pathlib.Path, TO_PROCESS: pathlib.Path, RESULTS: pathlib.Path)
+
+   Bases: :py:obj:`radiocc.utils.GetAttributes`
+
+   Structure representation the config.
+
+   .. py:method:: __str__(self) -> str
+
+
+   .. py:method:: __repr__(self) -> str
+
+
+
+.. py:class:: ConfigBuilder
+
+   Bases: :py:obj:`radiocc.utils.GetAttributes`
+
+   Structure representation the config.
+
+   .. py:attribute:: information
+      :annotation: :Optional[pathlib.Path]
+
+      
+
+   .. py:attribute:: to_process
+      :annotation: :Optional[pathlib.Path]
+
+      
+
+   .. py:attribute:: results
+      :annotation: :Optional[pathlib.Path]
+
+      
+
+   .. py:method:: build(self) -> Config
+
+
+
+.. py:class:: Scenario(TO_PROCESS: pathlib.Path, BAND: Bands, LAYER: Layers, INDEX_PROCESS: int)
+
+   Structure representation of a scenario.
+
+   .. py:method:: results(self, RESULTS: pathlib.Path) -> pathlib.Path
+
+
+   .. py:method:: read_descriptor(self) -> dotmap.DotMap
+
+
+
+.. py:class:: MexData
+
+   Input data from MEX.
+
+   .. py:attribute:: ET
+      :annotation: :nptyping.NDArray[float]
+
+      
+
+   .. py:attribute:: UTC
+      :annotation: :List[str]
+
+      
+
+   .. py:attribute:: DISTANCE
+      :annotation: :nptyping.NDArray[float]
+
+      
+
+   .. py:attribute:: DOPPLER
+      :annotation: :nptyping.NDArray[float]
+
+      
+
+   .. py:attribute:: DIFF_DOPPLER
+      :annotation: :nptyping.NDArray[float]
+
+      
+
+   .. py:attribute:: ERROR
+      :annotation: :nptyping.NDArray[float]
+
+      
+
+   .. py:attribute:: FSUP
+      :annotation: :float
+
+      
+
+   .. py:attribute:: SURFACES_CONDITIONS
+      :annotation: :nptyping.NDArray[bool]
+
+      
+
+   .. py:attribute:: INTEGRAL_CONDITIONS
+      :annotation: :nptyping.NDArray[bool]
+
+      
+
+
+.. py:class:: MavenData
+
+   Input data from MAVEN.
+
+   .. py:attribute:: ET
+      :annotation: :nptyping.NDArray[float]
+
+      
+
+   .. py:attribute:: DOPPLER
+      :annotation: :nptyping.NDArray[float]
+
+      
+
+
+.. py:class:: L2Data
+
+   Input data.
+
+   .. py:attribute:: FOLDER_TYPE
+      :annotation: :ProcessType
+
+      
+
+   .. py:attribute:: METADATA_FILE
+      :annotation: :pathlib.Path
+
+      
+
+   .. py:attribute:: DATA_FILE
+      :annotation: :pathlib.Path
+
+      
+
+   .. py:attribute:: dsn_station_naif_code
+      :annotation: :int
+
+      
+
+   .. py:attribute:: DISTANCE_UNIT
+      :annotation: :str
+
+      
+
+   .. py:attribute:: PLANET_NAIF_CODE
+      :annotation: :int
+
+      
+
+   .. py:attribute:: SPACECRAFT_NAIF_CODE
+      :annotation: :int
+
+      
+
+   .. py:attribute:: DATA
+      :annotation: :Union[MexData, MavenData]
+
+      
+
+
+.. py:class:: PressTemp
+
+   Structure representation of the data to be exported for pressure and
+   temperature.
+
+   .. py:attribute:: P_low
+      :annotation: :nptyping.NDArray[float]
+
+      
+
+   .. py:attribute:: P_med
+      :annotation: :nptyping.NDArray[float]
+
+      
+
+   .. py:attribute:: P_upp
+      :annotation: :nptyping.NDArray[float]
+
+      
+
+   .. py:attribute:: T_low
+      :annotation: :nptyping.NDArray[float]
+
+      
+
+   .. py:attribute:: T_med
+      :annotation: :nptyping.NDArray[float]
+
+      
+
+   .. py:attribute:: T_upp
+      :annotation: :nptyping.NDArray[float]
+
+      
+
+
+.. py:class:: Export
+
+   Structure representation of the data to be exported for a scenario.
+
+   .. py:attribute:: DATA_PATH
+      :annotation: :pathlib.Path
+
+      
+
+   .. py:attribute:: PLOT_PATH
+      :annotation: :pathlib.Path
+
+      
+
+   .. py:attribute:: EPHE_PATH
+      :annotation: :pathlib.Path
+
+      
+
+   .. py:attribute:: ET
+      :annotation: :nptyping.NDArray[float]
+
+      
+
+   .. py:attribute:: DOPPLER
+      :annotation: :nptyping.NDArray[float]
+
+      
+
+   .. py:attribute:: DOPPLER_DEBIAS
+      :annotation: :nptyping.NDArray[float]
+
+      
+
+   .. py:attribute:: DOPPLER_BIAS_FIT
+      :annotation: :nptyping.NDArray[float]
+
+      
+
+   .. py:attribute:: DISTANCE
+      :annotation: :nptyping.NDArray[float]
+
+      
+
+   .. py:attribute:: REFRACTIVITY
+      :annotation: :nptyping.NDArray[float]
+
+      
+
+   .. py:attribute:: NE
+      :annotation: :nptyping.NDArray[float]
+
+      
+
+   .. py:attribute:: TEC
+      :annotation: :Optional[nptyping.NDArray[float]]
+
+      
+
+   .. py:attribute:: ERROR
+      :annotation: :nptyping.NDArray[float]
+
+      
+
+   .. py:attribute:: ERROR_REFRAC
+      :annotation: :nptyping.NDArray[float]
+
+      
+
+   .. py:attribute:: ERROR_ELEC
+      :annotation: :nptyping.NDArray[float]
+
+      
+
+   .. py:attribute:: PT
+      :annotation: :Optional[PressTemp]
+
+      
+
+

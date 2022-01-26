@@ -1,0 +1,29 @@
+:py:mod:`radiocc.old.R8_Plot_Doppler_1`
+=======================================
+
+.. py:module:: radiocc.old.R8_Plot_Doppler_1
+
+.. autoapi-nested-parse::
+
+   Created on Sun Aug 30 19:52:33 2020
+
+   @author: ananya
+
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   radiocc.old.R8_Plot_Doppler_1.PLOT_Dop1
+
+
+
+.. py:function:: PLOT_Dop1(distance, Doppler, Doppler_debias, Doppler_biasfit, ET, PLOT_DIR, N_data)
+
+

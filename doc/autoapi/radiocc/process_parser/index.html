@@ -1,0 +1,959 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>radiocc.process_parser &#8212; radiocc 0.6.14 documentation</title>
+    
+    <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  
+    
+    <link rel="stylesheet"
+      href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin
+      href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+    
+      
+  
+    
+    <link rel="stylesheet" href="../../../_static/styles/pydata-sphinx-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    
+    <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="radiocc.reconstruct" href="../reconstruct/index.html" />
+    <link rel="prev" title="radiocc.process_descriptor" href="../process_descriptor/index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="container-xl">
+
+  <div id="navbar-start">
+    
+    
+<a class="navbar-brand" href="../../../index.html">
+<p class="title">radiocc</p>
+</a>
+
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../../usage.html">
+  Usage
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../index.html">
+  API Reference
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+            
+            <!-- Only show if we have sidebars configured, else just a small margin  -->
+            <div class="col-12 col-md-3 bd-sidebar">
+              <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../index.html">
+   <code class="xref py py-mod docutils literal notranslate">
+    <span class="pre">
+     radiocc
+    </span>
+   </code>
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="../old/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.old
+      </span>
+     </code>
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R10_Avg_BendAng_ImpParam/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R10_Avg_BendAng_ImpParam
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R11_Refractivity_and_Bending_Radius_v2/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R11_Refractivity_and_Bending_Radius_v2
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R12_Electron_Density/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R12_Electron_Density
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R13_Neutral_Number_Density/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R13_Neutral_Number_Density
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R13a_Pressure_and_Temperature/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R13a_Pressure_and_Temperature
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R14_Plot_check/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R14_Plot_check
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R15_Errors/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R15_Errors
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R16_Biasfit_Correction/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R16_Biasfit_Correction
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R17_Plot_profiles/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R17_Plot_profiles
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R17_Run_Routines1/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R17_Run_Routines1
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R18_Occ_Info_MVN/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R18_Occ_Info_MVN
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R4_State_Vectors_twoway_v2/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R4_State_Vectors_twoway_v2
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R5_Foot_Print/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R5_Foot_Print
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R6_Framework_Conversion/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R6_Framework_Conversion
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R7_Offset_Correction/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R7_Offset_Correction
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R8_Plot_Doppler_1/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R8_Plot_Doppler_1
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R9_BendAng_ImpParam_dn/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R9_BendAng_ImpParam_dn
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../old/R9_BendAng_ImpParam_up/index.html">
+       <code class="xref py py-mod docutils literal notranslate">
+        <span class="pre">
+         radiocc.old.R9_BendAng_ImpParam_up
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../cli/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.cli
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../config/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.config
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../constants/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.constants
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../core/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.core
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../download_data/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.download_data
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../export/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.export
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../interface/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.interface
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../model/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.model
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../process_descriptor/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.process_descriptor
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.process_parser
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reconstruct/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.reconstruct
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../utils/index.html">
+     <code class="xref py py-mod docutils literal notranslate">
+      <span class="pre">
+       radiocc.utils
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+  </div>
+</nav>
+              </div>
+              <div class="sidebar-end-items">
+              </div>
+            </div>
+            
+          
+
+          
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+            
+              
+              <div class="toc-item">
+                
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-contents">
+   Module Contents
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#functions">
+     Functions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#attributes">
+     Attributes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.SPICE_FOLDERS">
+       SPICE_FOLDERS
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.SPICE_RPATH_MEX">
+       SPICE_RPATH_MEX
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.LV2_RPATH">
+       LV2_RPATH
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.DATA_RPATH_MAVEN">
+       DATA_RPATH_MAVEN
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.METADATA_SUFFIX_MEX">
+       METADATA_SUFFIX_MEX
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.STATION_RPATH">
+       STATION_RPATH
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.START_STATIONS_NAIF_CODE">
+       START_STATIONS_NAIF_CODE
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.DEFAULT_DSN_STATION_NAIF_CODE">
+       DEFAULT_DSN_STATION_NAIF_CODE
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.DEFAULT_DSN_STATION_NAME">
+       DEFAULT_DSN_STATION_NAME
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.BODIES_RPATH">
+       BODIES_RPATH
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.SPACECRAFT_RPATH">
+       SPACECRAFT_RPATH
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.DATA_COL_IDX_MEX">
+       DATA_COL_IDX_MEX
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.METADATA_COL_IDX_MVN">
+       METADATA_COL_IDX_MVN
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.DATA_COL_IDX_MVN">
+       DATA_COL_IDX_MVN
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.SPACECRAFT_NAIF_CODES">
+       SPACECRAFT_NAIF_CODES
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.INVALID_SIGMA_OBSERVED">
+       INVALID_SIGMA_OBSERVED
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.DEFAULT_ERROR">
+       DEFAULT_ERROR
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.DISTANCE_SHIFT_UNIT">
+       DISTANCE_SHIFT_UNIT
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.UNITS">
+       UNITS
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.prepare_directories">
+       prepare_directories
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.load_spice_kernels">
+       load_spice_kernels
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.detect_folder_type">
+       detect_folder_type
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.get_data_file">
+       get_data_file
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.get_metadata_file">
+       get_metadata_file
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.get_data_and_meta_files">
+       get_data_and_meta_files
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.read_input_metadata">
+       read_input_metadata
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.check_input_info">
+       check_input_info
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.read_L2_metadata">
+       read_L2_metadata
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.read_tab_data">
+       read_tab_data
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#radiocc.process_parser.read_L2_data">
+       read_L2_data
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+              </div>
+              
+              <div class="toc-item">
+                
+              </div>
+              
+            
+          </div>
+          
+
+          
+          
+            
+          
+          <main class="col-12 col-md-9 col-xl-7 py-md-5 pl-md-5 pr-md-4 bd-content" role="main">
+              
+              <div>
+                
+  <div class="section" id="module-radiocc.process_parser">
+<span id="radiocc-process-parser"></span><h1><a class="reference internal" href="#module-radiocc.process_parser" title="radiocc.process_parser"><code class="xref py py-mod docutils literal notranslate"><span class="pre">radiocc.process_parser</span></code></a><a class="headerlink" href="#module-radiocc.process_parser" title="Permalink to this headline">¶</a></h1>
+<p>Parse the folder to be processed.</p>
+<div class="section" id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.process_parser.prepare_directories" title="radiocc.process_parser.prepare_directories"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prepare_directories</span></code></a>(scenario: radiocc.model.Scenario) → None</p></td>
+<td><p>Prepare directories.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.process_parser.load_spice_kernels" title="radiocc.process_parser.load_spice_kernels"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_spice_kernels</span></code></a>(SCENARIO: radiocc.model.Scenario, FOLDER_TYPE: radiocc.model.ProcessType) → None</p></td>
+<td><p>Load SPICE kernels.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.process_parser.detect_folder_type" title="radiocc.process_parser.detect_folder_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">detect_folder_type</span></code></a>(PROCESS_PATH: pathlib.Path) → Optional[radiocc.model.ProcessType]</p></td>
+<td><p>Detect folder type.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.process_parser.get_data_file" title="radiocc.process_parser.get_data_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_data_file</span></code></a>(SCENARIO: radiocc.model.Scenario, FOLDER_TYPE: radiocc.model.ProcessType) → Optional[pathlib.Path]</p></td>
+<td><p>Get the data input file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.process_parser.get_metadata_file" title="radiocc.process_parser.get_metadata_file"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_metadata_file</span></code></a>(SCENARIO: radiocc.model.Scenario, FOLDER_TYPE: radiocc.model.ProcessType, DATA_FILE: pathlib.Path) → Optional[pathlib.Path]</p></td>
+<td><p>Get the data input file.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.process_parser.get_data_and_meta_files" title="radiocc.process_parser.get_data_and_meta_files"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_data_and_meta_files</span></code></a>(SCENARIO: radiocc.model.Scenario, FOLDER_TYPE: radiocc.model.ProcessType) → Optional[radiocc.model.L2Data]</p></td>
+<td><p>Get data file and metadata file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.process_parser.read_input_metadata" title="radiocc.process_parser.read_input_metadata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_input_metadata</span></code></a>(l2_data: radiocc.model.L2Data) → radiocc.model.L2Data</p></td>
+<td><p>Read input metadata.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.process_parser.check_input_info" title="radiocc.process_parser.check_input_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_input_info</span></code></a>(l2_data: radiocc.model.L2Data, INFORMATION_PATH: pathlib.Path) → radiocc.model.L2Data</p></td>
+<td><p>Check input data with the information folder.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.process_parser.read_L2_metadata" title="radiocc.process_parser.read_L2_metadata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_L2_metadata</span></code></a>(l2_data: radiocc.model.L2Data, INFORMATION_PATH: pathlib.Path) → radiocc.model.L2Data</p></td>
+<td><p>Read L2 data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.process_parser.read_tab_data" title="radiocc.process_parser.read_tab_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_tab_data</span></code></a>(l2_data: radiocc.model.L2Data) → radiocc.model.L2Data</p></td>
+<td><p>read the tab file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.process_parser.read_L2_data" title="radiocc.process_parser.read_L2_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_L2_data</span></code></a>(SCENARIO: radiocc.model.Scenario, FOLDER_TYPE: radiocc.model.ProcessType) → Optional[radiocc.model.L2Data]</p></td>
+<td><p>Read L2 data.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="attributes">
+<h3>Attributes<a class="headerlink" href="#attributes" title="Permalink to this headline">¶</a></h3>
+<table class="longtable table autosummary">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.process_parser.SPICE_FOLDERS" title="radiocc.process_parser.SPICE_FOLDERS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPICE_FOLDERS</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.process_parser.SPICE_RPATH_MEX" title="radiocc.process_parser.SPICE_RPATH_MEX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPICE_RPATH_MEX</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.process_parser.LV2_RPATH" title="radiocc.process_parser.LV2_RPATH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LV2_RPATH</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.process_parser.DATA_RPATH_MAVEN" title="radiocc.process_parser.DATA_RPATH_MAVEN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DATA_RPATH_MAVEN</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.process_parser.METADATA_SUFFIX_MEX" title="radiocc.process_parser.METADATA_SUFFIX_MEX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">METADATA_SUFFIX_MEX</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.process_parser.STATION_RPATH" title="radiocc.process_parser.STATION_RPATH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">STATION_RPATH</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.process_parser.START_STATIONS_NAIF_CODE" title="radiocc.process_parser.START_STATIONS_NAIF_CODE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">START_STATIONS_NAIF_CODE</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.process_parser.DEFAULT_DSN_STATION_NAIF_CODE" title="radiocc.process_parser.DEFAULT_DSN_STATION_NAIF_CODE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DEFAULT_DSN_STATION_NAIF_CODE</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.process_parser.DEFAULT_DSN_STATION_NAME" title="radiocc.process_parser.DEFAULT_DSN_STATION_NAME"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DEFAULT_DSN_STATION_NAME</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.process_parser.BODIES_RPATH" title="radiocc.process_parser.BODIES_RPATH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BODIES_RPATH</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.process_parser.SPACECRAFT_RPATH" title="radiocc.process_parser.SPACECRAFT_RPATH"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPACECRAFT_RPATH</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.process_parser.DATA_COL_IDX_MEX" title="radiocc.process_parser.DATA_COL_IDX_MEX"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DATA_COL_IDX_MEX</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.process_parser.METADATA_COL_IDX_MVN" title="radiocc.process_parser.METADATA_COL_IDX_MVN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">METADATA_COL_IDX_MVN</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.process_parser.DATA_COL_IDX_MVN" title="radiocc.process_parser.DATA_COL_IDX_MVN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DATA_COL_IDX_MVN</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.process_parser.SPACECRAFT_NAIF_CODES" title="radiocc.process_parser.SPACECRAFT_NAIF_CODES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SPACECRAFT_NAIF_CODES</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.process_parser.INVALID_SIGMA_OBSERVED" title="radiocc.process_parser.INVALID_SIGMA_OBSERVED"><code class="xref py py-obj docutils literal notranslate"><span class="pre">INVALID_SIGMA_OBSERVED</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.process_parser.DEFAULT_ERROR" title="radiocc.process_parser.DEFAULT_ERROR"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DEFAULT_ERROR</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#radiocc.process_parser.DISTANCE_SHIFT_UNIT" title="radiocc.process_parser.DISTANCE_SHIFT_UNIT"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DISTANCE_SHIFT_UNIT</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#radiocc.process_parser.UNITS" title="radiocc.process_parser.UNITS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UNITS</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="data">
+<dt id="radiocc.process_parser.SPICE_FOLDERS">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">SPICE_FOLDERS</code><a class="headerlink" href="#radiocc.process_parser.SPICE_FOLDERS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="radiocc.process_parser.SPICE_RPATH_MEX">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">SPICE_RPATH_MEX</code><a class="headerlink" href="#radiocc.process_parser.SPICE_RPATH_MEX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="radiocc.process_parser.LV2_RPATH">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">LV2_RPATH</code><a class="headerlink" href="#radiocc.process_parser.LV2_RPATH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="radiocc.process_parser.DATA_RPATH_MAVEN">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">DATA_RPATH_MAVEN</code><em class="property"> = DATA</em><a class="headerlink" href="#radiocc.process_parser.DATA_RPATH_MAVEN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="radiocc.process_parser.METADATA_SUFFIX_MEX">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">METADATA_SUFFIX_MEX</code><em class="property"> = .LBL</em><a class="headerlink" href="#radiocc.process_parser.METADATA_SUFFIX_MEX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="radiocc.process_parser.STATION_RPATH">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">STATION_RPATH</code><em class="property"> = STATION.txt</em><a class="headerlink" href="#radiocc.process_parser.STATION_RPATH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="radiocc.process_parser.START_STATIONS_NAIF_CODE">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">START_STATIONS_NAIF_CODE</code><em class="property"> = 399000</em><a class="headerlink" href="#radiocc.process_parser.START_STATIONS_NAIF_CODE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="radiocc.process_parser.DEFAULT_DSN_STATION_NAIF_CODE">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">DEFAULT_DSN_STATION_NAIF_CODE</code><em class="property"> = 398990</em><a class="headerlink" href="#radiocc.process_parser.DEFAULT_DSN_STATION_NAIF_CODE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="radiocc.process_parser.DEFAULT_DSN_STATION_NAME">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">DEFAULT_DSN_STATION_NAME</code><em class="property"> = NEW NORCIA</em><a class="headerlink" href="#radiocc.process_parser.DEFAULT_DSN_STATION_NAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="radiocc.process_parser.BODIES_RPATH">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">BODIES_RPATH</code><em class="property"> = PLANETS_SATELLITE.txt</em><a class="headerlink" href="#radiocc.process_parser.BODIES_RPATH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="radiocc.process_parser.SPACECRAFT_RPATH">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">SPACECRAFT_RPATH</code><em class="property"> = SPACECRAFT.txt</em><a class="headerlink" href="#radiocc.process_parser.SPACECRAFT_RPATH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="radiocc.process_parser.DATA_COL_IDX_MEX">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">DATA_COL_IDX_MEX</code><a class="headerlink" href="#radiocc.process_parser.DATA_COL_IDX_MEX" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="radiocc.process_parser.METADATA_COL_IDX_MVN">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">METADATA_COL_IDX_MVN</code><a class="headerlink" href="#radiocc.process_parser.METADATA_COL_IDX_MVN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="radiocc.process_parser.DATA_COL_IDX_MVN">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">DATA_COL_IDX_MVN</code><a class="headerlink" href="#radiocc.process_parser.DATA_COL_IDX_MVN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="radiocc.process_parser.SPACECRAFT_NAIF_CODES">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">SPACECRAFT_NAIF_CODES</code><a class="headerlink" href="#radiocc.process_parser.SPACECRAFT_NAIF_CODES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="radiocc.process_parser.INVALID_SIGMA_OBSERVED">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">INVALID_SIGMA_OBSERVED</code><a class="headerlink" href="#radiocc.process_parser.INVALID_SIGMA_OBSERVED" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="radiocc.process_parser.DEFAULT_ERROR">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">DEFAULT_ERROR</code><em class="property"> = 0.01</em><a class="headerlink" href="#radiocc.process_parser.DEFAULT_ERROR" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="radiocc.process_parser.DISTANCE_SHIFT_UNIT">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">DISTANCE_SHIFT_UNIT</code><em class="property"> = 4</em><a class="headerlink" href="#radiocc.process_parser.DISTANCE_SHIFT_UNIT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="radiocc.process_parser.UNITS">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">UNITS</code><a class="headerlink" href="#radiocc.process_parser.UNITS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="radiocc.process_parser.prepare_directories">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">prepare_directories</code><span class="sig-paren">(</span><em class="sig-param">scenario: radiocc.model.Scenario</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#radiocc.process_parser.prepare_directories" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare directories.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="radiocc.process_parser.load_spice_kernels">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">load_spice_kernels</code><span class="sig-paren">(</span><em class="sig-param">SCENARIO: radiocc.model.Scenario</em>, <em class="sig-param">FOLDER_TYPE: radiocc.model.ProcessType</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#radiocc.process_parser.load_spice_kernels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load SPICE kernels.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="radiocc.process_parser.detect_folder_type">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">detect_folder_type</code><span class="sig-paren">(</span><em class="sig-param">PROCESS_PATH: pathlib.Path</em><span class="sig-paren">)</span> &#x2192; Optional[radiocc.model.ProcessType]<a class="headerlink" href="#radiocc.process_parser.detect_folder_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Detect folder type.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="radiocc.process_parser.get_data_file">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">get_data_file</code><span class="sig-paren">(</span><em class="sig-param">SCENARIO: radiocc.model.Scenario</em>, <em class="sig-param">FOLDER_TYPE: radiocc.model.ProcessType</em><span class="sig-paren">)</span> &#x2192; Optional[pathlib.Path]<a class="headerlink" href="#radiocc.process_parser.get_data_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the data input file.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="radiocc.process_parser.get_metadata_file">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">get_metadata_file</code><span class="sig-paren">(</span><em class="sig-param">SCENARIO: radiocc.model.Scenario</em>, <em class="sig-param">FOLDER_TYPE: radiocc.model.ProcessType</em>, <em class="sig-param">DATA_FILE: pathlib.Path</em><span class="sig-paren">)</span> &#x2192; Optional[pathlib.Path]<a class="headerlink" href="#radiocc.process_parser.get_metadata_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the data input file.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="radiocc.process_parser.get_data_and_meta_files">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">get_data_and_meta_files</code><span class="sig-paren">(</span><em class="sig-param">SCENARIO: radiocc.model.Scenario</em>, <em class="sig-param">FOLDER_TYPE: radiocc.model.ProcessType</em><span class="sig-paren">)</span> &#x2192; Optional[radiocc.model.L2Data]<a class="headerlink" href="#radiocc.process_parser.get_data_and_meta_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get data file and metadata file.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="radiocc.process_parser.read_input_metadata">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">read_input_metadata</code><span class="sig-paren">(</span><em class="sig-param">l2_data: radiocc.model.L2Data</em><span class="sig-paren">)</span> &#x2192; radiocc.model.L2Data<a class="headerlink" href="#radiocc.process_parser.read_input_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read input metadata.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="radiocc.process_parser.check_input_info">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">check_input_info</code><span class="sig-paren">(</span><em class="sig-param">l2_data: radiocc.model.L2Data</em>, <em class="sig-param">INFORMATION_PATH: pathlib.Path</em><span class="sig-paren">)</span> &#x2192; radiocc.model.L2Data<a class="headerlink" href="#radiocc.process_parser.check_input_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check input data with the information folder.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="radiocc.process_parser.read_L2_metadata">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">read_L2_metadata</code><span class="sig-paren">(</span><em class="sig-param">l2_data: radiocc.model.L2Data</em>, <em class="sig-param">INFORMATION_PATH: pathlib.Path</em><span class="sig-paren">)</span> &#x2192; radiocc.model.L2Data<a class="headerlink" href="#radiocc.process_parser.read_L2_metadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read L2 data.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="radiocc.process_parser.read_tab_data">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">read_tab_data</code><span class="sig-paren">(</span><em class="sig-param">l2_data: radiocc.model.L2Data</em><span class="sig-paren">)</span> &#x2192; radiocc.model.L2Data<a class="headerlink" href="#radiocc.process_parser.read_tab_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>read the tab file.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="radiocc.process_parser.read_L2_data">
+<code class="sig-prename descclassname">radiocc.process_parser.</code><code class="sig-name descname">read_L2_data</code><span class="sig-paren">(</span><em class="sig-param">SCENARIO: radiocc.model.Scenario</em>, <em class="sig-param">FOLDER_TYPE: radiocc.model.ProcessType</em><span class="sig-paren">)</span> &#x2192; Optional[radiocc.model.L2Data]<a class="headerlink" href="#radiocc.process_parser.read_L2_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read L2 data.</p>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+              </div>
+              
+              
+              <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../process_descriptor/index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">radiocc.process_descriptor</span></code></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../reconstruct/index.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">radiocc.reconstruct</span></code></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+              
+          </main>
+          
+
+      </div>
+    </div>
+  
+    <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <footer class="footer mt-5 mt-md-0">
+  <div class="container">
+    
+    <div class="footer-item">
+      <p class="copyright">
+    &copy; Copyright 2022, Grégoire Henry, Ananya Krishnan.<br>
+</p>
+    </div>
+    
+    <div class="footer-item">
+      <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.4.4.<br>
+</p>
+    </div>
+    
+  </div>
+</footer>
+  </body>
+</html>

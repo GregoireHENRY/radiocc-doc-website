@@ -1,0 +1,22 @@
+:py:mod:`radiocc.old.R18_Occ_Info_MVN`
+======================================
+
+.. py:module:: radiocc.old.R18_Occ_Info_MVN
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   radiocc.old.R18_Occ_Info_MVN.occultation_info
+
+
+
+.. py:function:: occultation_info(planet, ground, epoch, frame, sc, DATA_ID, DATA_DIR, Threshold_Surface, EPHE_DIR)
+
+

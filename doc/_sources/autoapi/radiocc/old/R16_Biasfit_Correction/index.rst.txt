@@ -1,0 +1,29 @@
+:py:mod:`radiocc.old.R16_Biasfit_Correction`
+============================================
+
+.. py:module:: radiocc.old.R16_Biasfit_Correction
+
+.. autoapi-nested-parse::
+
+   Created on Tue Sep  1 07:32:42 2020
+
+   @author: ananya
+
+
+
+Module Contents
+---------------
+
+
+Functions
+~~~~~~~~~
+
+.. autoapisummary::
+
+   radiocc.old.R16_Biasfit_Correction.Off_Cor2
+
+
+
+.. py:function:: Off_Cor2(Type, Doppler, Diff_doppler, ET, delET, N_data, distance)
+
+
